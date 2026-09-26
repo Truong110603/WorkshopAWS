@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 3"
-date: 2026-04-12
+date: 2026-08-17
 weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
@@ -15,6 +15,12 @@ pre: " <b> 1.3. </b> "
 * Tìm hiểu CloudWatch Dashboard.
 * Tìm hiểu AWS Cost Explorer.
 * Tìm hiểu AWS Service Quotas.
+* Tìm hiểu Launch Templates.
+* Nghiên cứu dịch vụ cân bằng tải Elastic Load Balancer (ELB)
+* Tìm hiểu Auto Scaling Groups (ASG).
+* Tìm hiểu Auto Scaling Policies.
+* Tìm hiểu Application Load Balancer (ALB).
+
 
 ### Các công việc cần triển khai trong tuần này:
 
@@ -60,3 +66,32 @@ pre: " <b> 1.3. </b> "
   * Quản lý Service Quotas.
 
 * Củng cố kiến thức về giám sát và quản lý chi phí trên AWS.
+* Tìm hiểu Launch Templates:
+  * AMI.
+  * Instance Type.
+  * Key Pair.
+  * Security Group.
+
+* Tìm hiểu Auto Scaling Groups:
+  * Desired Capacity.
+  * Minimum Capacity.
+  * Maximum Capacity.
+  * Tự động thay thế EC2.
+
+* Tìm hiểu Auto Scaling Policies:
+  * Dynamic Scaling.
+  * Target Tracking.
+  * CloudWatch Metrics.
+
+* Tìm hiểu Application Load Balancer:
+  * Listener.
+  * Target Group.
+  * Routing Rules.
+  * Phân phối lưu lượng.
+
+* Tìm hiểu Health Checks:
+  * Trạng thái Healthy và Unhealthy.
+  * Giám sát dịch vụ.
+  * Thay thế EC2 gặp lỗi.
+
+* Hiểu nguyên lý hoạt động của ELB (ALB, NLB) 
