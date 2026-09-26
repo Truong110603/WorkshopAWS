@@ -60,18 +60,17 @@ Hệ thống lưu trữ dữ liệu tập trung trên cơ sở dữ liệu đám
 ### 3.1. Các dịch vụ AWS sử dụng (AWS Services Selection)
 * **ReactJS + TypeScript (Frontend):** Sử dụng để xây dựng giao diện người dùng hiện đại, có khả năng tương tác cao.
 <br>Các chức năng chính:
-<br>-Hiển thị dashboard.
-<br>-Quản lý giao dịch.
-<br>-Hiển thị biểu đồ thống kê.
-<br>-Tương tác với REST API.
+  <br>-Hiển thị dashboard.
+  <br>-Quản lý giao dịch.
+  <br>-Hiển thị biểu đồ thống kê.
+  <br>-Tương tác với REST API.
 * **Node.js + Express.js (Backend):**
-<br>Được lựa chọn để xây dựng hệ thống API xử lý nghiệp vụ.
-<br>Backend chịu trách nhiệm:
-
-<br>-Xác thực người dùng.
-<br>-Kiểm tra dữ liệu đầu vào.
-<br>-Xử lý logic giao dịch.
-<br>-Kết nối với cơ sở dữ liệu.
+  <br>Được lựa chọn để xây dựng hệ thống API xử lý nghiệp vụ.
+  <br>Backend chịu trách nhiệm:
+   <br>-Xác thực người dùng.
+   <br>-Kiểm tra dữ liệu đầu vào.
+   <br>-Xử lý logic giao dịch.
+   <br>-Kết nối với cơ sở dữ liệu.
 * **MongoDB Atlas (Database):**
 <br>Sử dụng cơ sở dữ liệu NoSQL MongoDB để lưu trữ:
 <br>-Thông tin tài khoản.
