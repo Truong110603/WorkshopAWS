@@ -19,7 +19,7 @@ pre: " <b> 1.1. </b> "
 
  | Task | Start Date | Completion Date | Reference Material |
  | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
-| 1 | - Explore the AWS architectural overview and set up a practice account.<br>- Study AWS Core Services: EC2, S3, IAM. | 03/08/2026 | 09/08/2026 | https://cloudjourney.awsstudygroup.com/ |
+ | - Explore the AWS architectural overview and set up a practice account.<br>- Study AWS Core Services: EC2, S3, IAM. | 03/08/2026 | 09/08/2026 | https://cloudjourney.awsstudygroup.com/ |
 ### Week 1 Achievements:
 
 * Learned AWS Cloud basics and internship workflow.
