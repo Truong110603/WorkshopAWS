@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 03/08/2026 đến ngày 27/09/2026
 
-![Ảnh đại diện của bạn]()
+![Ảnh đại diện của bạn](images/avatar.jpg)
 
 
 
@@ -33,8 +33,6 @@ chapter: false
 
 1.  [Worklog](1-Worklog/)
 2.  [Proposal](2-Proposal/)
-3.  [Các bài blogs đã đăng](3-BlogsPosted/)
-4.  [Các events đã tham gia](4-EventParticipated/)
-5.  [Workshop](5-Workshop/)
-6.  [Tự đánh giá](6-Self-evaluation/)
-7.  [Chia sẻ, đóng góp ý kiến](7-Feedback/)
+3.  [Workshop](5-Workshop/)
+4.  [Tự đánh giá](6-Self-evaluation/)
+5.  [Chia sẻ, đóng góp ý kiến](7-Feedback/)
