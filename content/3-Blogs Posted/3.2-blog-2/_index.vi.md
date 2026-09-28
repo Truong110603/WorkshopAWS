@@ -4,19 +4,19 @@ weight: 3
 pre: " <b> 3.2 </b> "
 ---
 
-# TÍCH HỢP KHẢ NĂNG QUAN SÁT CHO MICROSERVICES TRÊN EKS VỚI ADOT VÀ HELM
+# XÂY DỰNG MÔI TRƯỜNG AWS AN TOÀN VỚI CLOUD SECURITY & GOVERNANCE
 
-Khả năng quan sát (Observability) là yếu tố sống còn để duy trì độ tin cậy trong các kiến trúc hệ thống phân tán. Giải pháp này cung cấp phương pháp triển khai giám sát toàn diện cho các ứng dụng Microservices (cụ thể là .NET) chạy trên Amazon Elastic Kubernetes Service (EKS) bằng cách sử dụng AWS Distro for OpenTelemetry (ADOT) kết hợp với công cụ quản lý gói Helm.
+Khi doanh nghiệp chuyển đổi hệ thống lên Cloud, bảo mật trở thành một trong những yếu tố quan trọng nhất. AWS cung cấp nhiều dịch vụ giúp kiểm soát quyền truy cập, giám sát tài nguyên và xây dựng môi trường Cloud tuân thủ các tiêu chuẩn bảo mật.<br>
+Cloud Security không chỉ tập trung vào việc bảo vệ dữ liệu mà còn bao gồm cách doanh nghiệp quản lý danh tính, cấu hình hệ thống và phản ứng trước các nguy cơ bảo mật.
 
 ## Các điểm chính của giải pháp:
 
-* **Thu thập dữ liệu tự động (Auto-instrumentation):** ADOT cho phép tự động trích xuất các dữ liệu viễn trắc (telemetry data) bao gồm traces và metrics mà không cần can thiệp hay sửa đổi mã nguồn ứng dụng (zero-code changes).
-* **Triển khai chuẩn hóa với Helm và ADOT Operator:** Sử dụng Helm charts để đóng gói và triển khai ADOT Operator lên cụm Kubernetes (EKS). Việc này giúp tự động hóa quá trình quản lý vòng đời và cấp phát các cấu hình thu thập dữ liệu (Collector) một cách linh hoạt.
-* **Tích hợp sâu với hệ sinh thái giám sát AWS:** Dữ liệu viễn trắc sau khi được ADOT Collector xử lý sẽ được định tuyến liền mạch đến **AWS X-Ray** (để phân tích dấu vết phân tán - distributed tracing) và **Amazon CloudWatch** (để theo dõi số liệu metrics).
-* **Trực quan hóa luồng dữ liệu (Request Flow):** Cho phép các kỹ sư DevOps dễ dàng theo dõi toàn bộ vòng đời của một yêu cầu (request) khi nó đi qua nhiều dịch vụ độc lập (microservices), từ đó xác định chính xác nút thắt cổ chai (bottlenecks) về hiệu suất.
-* **Góc nhìn thực tiễn cho Khoa học Máy tính:** Đây là một minh chứng hoàn hảo về ứng dụng các nguyên lý vận hành hệ thống phân tán và thực hành tự động hóa (CI/CD/Infrastructure as Code), giúp rút ngắn thời gian phát hiện và khắc phục sự cố (MTTR - Mean Time To Recovery).
+* **Kiểm soát quyền truy cập với AWS IAM::** AWS IAM giúp quản lý người dùng, role và permission theo nguyên tắc Least Privilege, đảm bảo mỗi thành phần chỉ có quyền cần thiết.
+* **Giám sát cấu hình với AWS Config:** AWS Config giúp theo dõi thay đổi tài nguyên, đánh giá compliance và phát hiện các cấu hình không phù hợp.
+* **Phát hiện nguy cơ với AWS Security Hub:** Security Hub tập trung các cảnh báo bảo mật từ nhiều dịch vụ AWS, hỗ trợ đội ngũ nhanh chóng xử lý vấn đề.
+* **Quản trị tập trung với AWS Organizations:** AWS Organizations cho phép quản lý nhiều AWS Account và áp dụng các chính sách bảo mật thông qua Service Control Policies.
+* **Áp dụng AWS Security Best Practices:** Kết hợp Well-Architected Framework giúp doanh nghiệp xây dựng kiến trúc an toàn ngay từ giai đoạn thiết kế.
 
-![Sơ đồ kiến trúc ](/Workshop/images/anhblog3.2.jpg)
 
-* **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/dtS99CXi))
-* **Link tham khảo:** [AWS Blog - Adding observability to .NET microservices on EKS with ADOT auto-instrumentation and Helm](https://aws.amazon.com/blogs/dotnet/adding-observability-to-net-microservices-on-eks-with-adot-auto-instrumentation-and-helm/)
+* **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/gteMnhN5))
+* **Link tham khảo:** [AWS Security Blog - Updates to the security pillar of the AWS Well-Architected Framework](https://aws.amazon.com/blogs/security/updates-to-security-pillar-aws-well-architected-framework/?utm_source=chatgpt.com)
