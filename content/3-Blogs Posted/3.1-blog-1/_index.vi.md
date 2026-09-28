@@ -20,4 +20,4 @@ Thông qua việc kết hợp các dịch vụ như AWS Lambda, Amazon API Gatew
 * **Tối ưu chi phí vận hành:** Mô hình Serverless giúp doanh nghiệp chỉ trả phí cho lượng tài nguyên thực sự sử dụng, giảm chi phí duy trì hạ tầng khi ứng dụng có lưu lượng biến động.
 
 * **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/g4BN9wce))
-* **Link tham khảo:** [AWS Architecture Blog - Serverless Architectures with AWS Lambda: Overview and Best Practices]([https://aws.amazon.com/blogs/aws-cloud-financial-management/how-to-scale-cost-optimization-across-1000s-of-accounts-with-a-finops-eba/](https://aws.amazon.com/blogs/architecture/serverless-architectures-with-aws-lambda-overview-and-best-practices/))
+* **Link tham khảo:** [AWS Architecture Blog - Serverless Architectures with AWS Lambda: Overview and Best Practices](https://aws.amazon.com/blogs/architecture/serverless-architectures-with-aws-lambda-overview-and-best-practices/?utm_source=chatgpt.com)
