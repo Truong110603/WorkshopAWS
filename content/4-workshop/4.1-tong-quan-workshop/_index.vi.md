@@ -64,3 +64,217 @@ Kiến trúc hệ thống Expense Tracker bao gồm các thành phần chính:
 
 Luồng kiến trúc tổng quát:
 
+
+
+Ngoài ra hệ thống sử dụng Amazon CloudWatch để thu thập log và giám sát trạng thái hoạt động của ứng dụng.
+
+
+## 3. Quy trình hoạt động của hệ thống
+
+Luồng hoạt động chính của hệ thống được thực hiện theo các bước:
+
+
+### Bước 1: Người dùng truy cập hệ thống
+
+Người dùng truy cập website thông qua địa chỉ Public IPv4 của Amazon EC2.
+
+Trình duyệt gửi các request đến Backend API được xây dựng bằng Node.js.
+
+
+### Bước 2: Đăng ký tài khoản
+
+Người dùng nhập thông tin:
+
+- Họ tên
+- Email
+- Mật khẩu
+
+
+Backend tiếp nhận dữ liệu thông qua API:
+
+![POST /api/auth/register]
+
+
+Mật khẩu được mã hóa bằng thư viện bcrypt trước khi lưu vào MongoDB.
+
+
+### Bước 3: Đăng nhập hệ thống
+
+Người dùng gửi thông tin đăng nhập:
+![POST /api/auth/login]
+
+
+
+Backend kiểm tra thông tin tài khoản trong MongoDB.
+
+Nếu hợp lệ, hệ thống tạo JWT Token và trả về cho Client.
+
+
+JWT Token được lưu trong LocalStorage và được sử dụng trong các request tiếp theo.
+
+
+### Bước 4: Quản lý giao dịch
+
+Sau khi đăng nhập thành công, người dùng có thể:
+
+- Thêm giao dịch mới.
+- Xem danh sách giao dịch.
+- Cập nhật dữ liệu.
+- Xóa giao dịch.
+
+
+Mỗi request gửi lên API đều kèm theo JWT:
+
+![Authorization: Bearer <token>]
+
+
+
+Middleware xác thực token trước khi cho phép truy cập dữ liệu.
+
+
+### Bước 5: Lưu trữ dữ liệu
+
+Backend Node.js sử dụng MongoDB Driver thông qua thư viện Mongoose để giao tiếp với MongoDB Atlas.
+
+
+Dữ liệu giao dịch bao gồm:
+
+- Tên giao dịch.
+- Số tiền.
+- Loại giao dịch.
+- Danh mục.
+- Ngày giao dịch.
+- Người sở hữu dữ liệu.
+
+
+Mỗi giao dịch được liên kết với User ID nhằm đảm bảo tính riêng tư.
+
+
+### Bước 6: Triển khai trên AWS EC2
+
+Ứng dụng Backend được triển khai trên Amazon EC2:
+
+
+- Cấu hình Ubuntu Server.
+- Cài đặt Node.js.
+- Cài đặt npm packages.
+- Chạy ứng dụng bằng PM2.
+- Cấu hình Security Group mở cổng 3000.
+
+
+PM2 giúp ứng dụng duy trì hoạt động ngay cả khi server được khởi động lại.
+
+
+### Bước 7: Giám sát hệ thống
+
+Amazon CloudWatch được sử dụng để:
+
+- Theo dõi trạng thái EC2.
+- Kiểm tra CPU, RAM.
+- Theo dõi log ứng dụng.
+- Phát hiện lỗi trong quá trình chạy.
+
+
+## 4. Các dịch vụ được sử dụng
+
+
+Workshop sử dụng các dịch vụ AWS sau:
+
+
+## Compute
+
+### Amazon EC2
+
+Được sử dụng để triển khai Backend Node.js.
+
+Chức năng:
+
+- Cung cấp môi trường chạy ứng dụng.
+- Quản lý tài nguyên máy chủ.
+- Cho phép truy cập thông qua Public IPv4.
+
+
+## Networking
+
+### Amazon VPC
+
+Tạo môi trường mạng riêng cho hệ thống.
+
+
+### Public Subnet
+
+Chứa EC2 Instance có khả năng truy cập Internet.
+
+
+### Internet Gateway
+
+Kết nối VPC với Internet.
+
+
+## Security
+
+### AWS IAM
+
+Quản lý quyền truy cập AWS.
+
+
+IAM được sử dụng để:
+
+- Tạo User.
+- Phân quyền quản lý tài nguyên.
+- Kiểm soát quyền truy cập dịch vụ AWS.
+
+
+## Database
+
+### MongoDB Atlas
+
+Lưu trữ:
+
+- Thông tin người dùng.
+- Danh sách giao dịch.
+- Dữ liệu tài chính cá nhân.
+
+
+## Monitoring
+
+### Amazon CloudWatch
+
+Dùng để:
+
+- Thu thập log.
+- Theo dõi hiệu suất.
+- Kiểm tra trạng thái hệ thống.
+
+
+## 5. Kết quả đạt được
+
+
+Sau khi hoàn thành workshop, người học có thể:
+
+
+* Xây dựng ứng dụng quản lý chi tiêu bằng Node.js và Express.
+
+* Thiết kế hệ thống đăng nhập sử dụng JWT Authentication.
+
+* Kết nối Backend với MongoDB Atlas.
+
+* Xây dựng REST API phục vụ quản lý giao dịch.
+
+* Triển khai ứng dụng Web trên Amazon EC2.
+
+* Cấu hình VPC, Subnet và Internet Gateway.
+
+* Quản lý quyền truy cập AWS bằng IAM.
+
+* Sử dụng PM2 để quản lý tiến trình Node.js.
+
+* Giám sát ứng dụng thông qua Amazon CloudWatch.
+
+* Hiểu được quy trình triển khai một ứng dụng Web thực tế trên nền tảng Cloud.
+
+
+Sau khi hoàn thành workshop, toàn bộ tài nguyên AWS có thể được xóa để tránh phát sinh chi phí ngoài mong muốn.
+
+
+
