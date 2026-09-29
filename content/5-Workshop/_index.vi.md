@@ -1,16 +1,16 @@
 ---
 title: "Workshop"
-date: 2026-01-01
+date: 2026-08-31
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Triển khai Second-Hand Marketplace trên AWS
+# Triển khai Expense Tracker trên AWS
 
 #### Tổng quan
 
-Trong workshop này, chúng ta sẽ xây dựng và triển khai **Second-Hand Marketplace** bằng kiến trúc cloud-native trên AWS.
+Workshop này hướng dẫn xây dựng và triển khai ứng dụng Expense Tracker – Quản lý chi tiêu cá nhân trên nền tảng AWS. Ứng dụng được xây dựng bằng Node.js và Express, sử dụng MongoDB Atlas để lưu trữ dữ liệu và được triển khai trên Amazon EC2.
 
 Giải pháp sử dụng các dịch vụ AWS như **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **Amazon Route 53** và **AWS Certificate Manager (ACM)**, kết hợp với **MongoDB Atlas** nhằm xây dựng một nền tảng có khả năng mở rộng, bảo mật, tính sẵn sàng cao và hỗ trợ triển khai tự động.
 
