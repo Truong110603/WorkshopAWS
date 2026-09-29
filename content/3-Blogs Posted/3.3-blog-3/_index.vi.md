@@ -4,19 +4,18 @@ weight: 3
 pre: " <b> 3.3 </b> "
 ---
 
-# CHUYỂN ĐỔI AI AGENTS ĐA MÔ HÌNH SANG AMAZON BEDROCK
+# THIẾT KẾ KIẾN TRÚC CLOUD CHUẨN DOANH NGHIỆP VỚI AWS WELL-ARCHITECTED FRAMEWORK
 
-Việc xây dựng các trợ lý trí tuệ nhân tạo (AI Agents) tinh vi thường đòi hỏi sự kết hợp của nhiều mô hình nền tảng (Foundation Models - FMs) khác nhau để xử lý các tác vụ chuyên biệt. Tuy nhiên, việc tự quản lý và điều phối luồng giao tiếp giữa các mô hình này tạo ra rào cản lớn về hạ tầng. Bài viết này phân tích phương pháp di chuyển (migrate) kiến trúc AI Agents đa mô hình tự quản lý sang dịch vụ được quản lý hoàn toàn **Amazon Bedrock Agents** và **Core Runtime**.
+*Trong quá trình tìm hiểu AWS Cloud Journey, tôi nhận ra rằng một hệ thống Cloud tốt không chỉ cần hoạt động ổn định mà còn phải đảm bảo khả năng bảo mật, mở rộng, tối ưu chi phí và vận hành lâu dài.
+***AWS Well-Architected Framework** cung cấp phương pháp đánh giá kiến trúc dựa trên các nguyên tắc thực tế, giúp đội ngũ kỹ thuật phát hiện điểm chưa tối ưu và cải thiện hệ thống theo hướng bền vững.
 
 ## Các điểm chính của giải pháp:
 
-* **Đơn giản hóa công tác điều phối (Orchestration):** Thay vì phải tự xây dựng các khung logic phức tạp để quản lý chuỗi suy luận của AI, Amazon Bedrock Agents tự động phân tích ngôn ngữ tự nhiên, chia nhỏ tác vụ và quyết định gọi các API hoặc truy xuất dữ liệu phù hợp (ReAct prompting).
-* **Tính linh hoạt đa mô hình (Multi-Model Flexibility):** Bedrock Core Runtime cho phép các nhà phát triển dễ dàng chuyển đổi hoặc kết hợp nhiều mô hình hàng đầu (như Anthropic Claude, Amazon Titan, Meta Llama) trong cùng một luồng công việc để tối ưu hóa chi phí và hiệu suất cho từng tác vụ cụ thể (ví dụ: mô hình nhẹ để định tuyến, mô hình mạnh để tạo văn bản).
-* **Tích hợp liền mạch với Knowledge Bases:** Đơn giản hóa việc triển khai kiến trúc RAG (Retrieval-Augmented Generation) bằng cách kết nối trực tiếp Agent với các kho dữ liệu doanh nghiệp, giúp AI đưa ra câu trả lời chính xác, có ngữ cảnh và giảm thiểu hiện tượng ảo giác (hallucination).
-* **Tối ưu hóa vận hành và Bảo mật:** Loại bỏ hoàn toàn gánh nặng quản lý máy chủ (Serverless AI). Dữ liệu khách hàng và dữ liệu huấn luyện được giữ an toàn trong môi trường VPC, tuân thủ các tiêu chuẩn bảo mật khắt khe của AWS.
-* **Góc nhìn thực tiễn cho Khoa học Máy tính:** Quá trình chuyển đổi này cung cấp bài học quan trọng về thiết kế kiến trúc phần mềm tích hợp AI (AI-integrated Software Architecture). Nó minh họa xu hướng dịch chuyển từ việc phát triển mô hình cục bộ sang tận dụng các nền tảng quản lý MLOps/LLMOps trên đám mây để mở rộng quy mô.
-
-![Kiến trúc Amazon Bedrock Agents](/Workshop/images/baiblog3.3.png)
+***Đánh giá hệ thống theo 6 trụ cột:** AWS Well-Architected Framework tập trung vào Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization và Sustainability.
+***Cải thiện khả năng vận hành:** Áp dụng monitoring, automation và quy trình quản lý thay đổi giúp giảm lỗi trong quá trình vận hành.
+***Tăng khả năng mở rộng và độ tin cậy:** Sử dụng các dịch vụ như Auto Scaling, Elastic Load Balancing và Multi-AZ Architecture để đảm bảo hệ thống hoạt động ổn định.
+***Tối ưu hiệu năng và chi phí:** Kết hợp CloudWatch, Compute Optimizer và Cost Explorer để theo dõi hiệu suất và tối ưu tài nguyên.
+***Xây dựng kiến trúc theo chuẩn doanh nghiệp:**Framework giúp đội ngũ đưa ra quyết định thiết kế dựa trên best practices thay vì chỉ dựa vào kinh nghiệm cá nhân.
 
 * **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/dcQ8E83M))
-* **Link tham khảo:** [AWS Blog - Migrating multi-model AI agents to Amazon Bedrock Agent/Core Runtime](https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/)
+* **Link tham khảo:** [AWS Architecture Blog - AWS Well-Architected Framework](https://aws.amazon.com/blogs/architecture/tag/aws-well-architected-framework/)
