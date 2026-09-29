@@ -4,13 +4,13 @@ weight: 3
 pre: " <b> 3. </b> "
 ---
 
-Below is a list of technical sharing articles I published in the AWS Study Group community during my internship:
+Below is the list of technical blog posts that I have published and shared with the AWS Study Group community during my internship:
 
-### [Blog 1 - SCALING COST OPTIMIZATION ACROSS THOUSANDS OF ACCOUNTS WITH A FINOPS EBA](3.1-blog-1/)
-This blog introduces the FinOps Experience-Based Acceleration (EBA) model combined with AWS automation to manage and reduce costs across thousands of accounts rapidly.
+### [Blog 1 - BUILDING MODERN APPLICATIONS WITH SERVERLESS ARCHITECTURE ON AWS](3.1-blog-1/)  
+This blog introduces how to build modern applications on AWS using Serverless Architecture, helping reduce infrastructure management efforts, enable automatic scaling, and optimize operational costs.
 
-### [Blog 2 - INTEGRATING OBSERVABILITY FOR MICROSERVICES ON EKS WITH ADOT AND HELM](3.2-blog-2/)
-This blog guides how to deploy comprehensive monitoring for Microservices applications on EKS using AWS Distro for OpenTelemetry (ADOT) and Helm, enabling automatic telemetry data collection.
+### [Blog 2 - BUILDING A SECURE AWS ENVIRONMENT WITH CLOUD SECURITY & GOVERNANCE](3.2-blog-2/)  
+This blog explores security and governance practices for AWS environments through services such as IAM, Security Hub, AWS Config, and AWS security best practices.
 
-### [Blog 3 - MIGRATING MULTI-MODEL AI AGENTS TO AMAZON BEDROCK](3.3-blog-3/)
-This blog analyzes the migration of a multi-model AI Agents architecture to Amazon Bedrock Agents and Core Runtime, simplifying orchestration and optimizing both cost and performance.
+### [Blog 3 - DESIGNING ENTERPRISE-GRADE CLOUD ARCHITECTURE WITH AWS WELL-ARCHITECTED FRAMEWORK](3.3-blog-3/)  
+This blog discusses how to design and evaluate Cloud architectures based on AWS best practices to ensure secure, reliable, optimized, and scalable systems.
