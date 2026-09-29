@@ -1,30 +1,32 @@
 ---
 title: "Workshop"
-weight: 4
-pre: " <b> 4. </b> "
+date: 2026-08-31
+weight: 5
+chapter: false
+pre: " <b> 5. </b> "
 ---
 
-## IMPLEMENTING AN AUTOMATED SERVERLESS IMAGE PROCESSING SYSTEM ON AWS
+# Deploying Expense Tracker on AWS
 
-### Overview
-In this workshop, we will build and deploy an Automated Image Processing System (Thumbnail Generator) using a Serverless Event-driven architecture on AWS.
+#### Overview
 
-The solution utilizes core AWS services such as Amazon S3 (for storing original images, output images, and hosting the static web interface), AWS Lambda (for graphic processing and image compression using Python 3.12 and Pillow Layer), Amazon DynamoDB (for storing metadata and processing history), and AWS IAM (for managing security access permissions) to build a platform capable of automatic scaling, zero server management, and cost optimization.
+This workshop guides you through building and deploying an Expense Tracker application – a personal expense management system on the AWS platform. The application is developed using Node.js and Express, uses MongoDB Atlas for data storage, and is deployed on AWS infrastructure.
 
-Throughout this workshop, you will prepare the AWS Learner Lab account environment, configure cloud storage repositories, set up a NoSQL database, program a serverless processing function integrated with external libraries (Layers), configure the event trigger flow between S3 and Lambda, deploy the user interface to static web hosting, test the entire application across multiple independent devices, and finally clean up all created AWS resources.
+The solution leverages AWS services including **Amazon ECS Fargate**, **Amazon ECR**, **Amazon S3**, **AWS CodeBuild**, **Application Load Balancer**, **Amazon CloudWatch**, **Amazon Route 53**, and **AWS Certificate Manager (ACM)**, combined with **MongoDB Atlas** to build a scalable, secure, highly available platform with automated deployment capabilities.
 
----
+Throughout this workshop, you will prepare the project environment, configure network infrastructure, integrate application services, containerize the application using Docker, deploy it on Amazon ECS Fargate, configure domain names and HTTPS, automate the deployment process with AWS CodeBuild, monitor the system, perform end-to-end application testing, and finally clean up all AWS resources that were created.
 
-### Contents
+#### Contents
 
-1. [Workshop Overview](4.1-tong-quan-workshop/)
-2. [Prerequisites](4.2-dieu-kien-chuan-bi/)
-3. [Storage Infrastructure Configuration](4.3-cau-hinh-ha-tang-luu-tru/)
-4. [NoSQL Database Setup](4.4-thiet-lap-co-so-du-lieu-nosl/)
-5. [System Access Control](4.5-cap-quyen-truy-cap-he-thong/)
-6. [Processing Logic Implementation](4.6-trien-khai-logic-xu-ly/)
-7. [Event Flow Configuration](4.7-cau-hinh-luong-su-kien/)
-8. [Domain and Web Hosting Configuration](4.8-cau-hinh-ten-mien/)
-9. [System Monitoring](4.9-giam-sat-he-thong/)
-10. [System Testing](4.10-kiem-thu-he-thong/)
-11. [Resource Cleanup](4.11-don-dep-tai-nguyen/)
+1. [Workshop Overview](5.1-Workshop-overview/)
+2. [Prerequisites](5.2-Prerequisite/)
+3. [Project Foundation Setup](5.3-Project-foundation/)
+4. [Network Infrastructure Configuration](5.4-Networking/)
+5. [Application Services Configuration](5.5-Application-Services/)
+6. [Application Containerization with Docker](5.6-Containerization/)
+7. [Application Deployment](5.7-Deploy-Application/)
+8. [Domain and HTTPS Configuration](5.8-Domain-and-HTTPS/)
+9. [CI/CD Setup](5.9-CICD/)
+10. [System Monitoring](5.10-Monitoring/)
+11. [System Testing](5.11-Testing/)
+12. [Resource Cleanup](5.12-Cleanup/)
