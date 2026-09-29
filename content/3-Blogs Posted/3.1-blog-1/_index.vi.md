@@ -13,7 +13,7 @@ Thông qua việc kết hợp các dịch vụ như AWS Lambda, Amazon API Gatew
 
 ## Các điểm chính của giải pháp:
 
-* **Xử lý logic ứng dụng với AWS Lambda::** TAWS Lambda cho phép chạy code theo mô hình event-driven mà không cần provisioning hoặc quản lý máy chủ. Tài nguyên được tự động mở rộng dựa trên lượng request thực tế.
+* **Xử lý logic ứng dụng với AWS Lambda:** TAWS Lambda cho phép chạy code theo mô hình event-driven mà không cần provisioning hoặc quản lý máy chủ. Tài nguyên được tự động mở rộng dựa trên lượng request thực tế.
 * **Xây dựng API linh hoạt với Amazon API Gateway:** API Gateway cung cấp lớp kết nối giữa ứng dụng client và backend, hỗ trợ xây dựng các REST API có khả năng mở rộng, bảo mật và quản lý dễ dàng.
 * **Lưu trữ dữ liệu với Amazon DynamoDB::** DynamoDB cung cấp cơ sở dữ liệu NoSQL có khả năng mở rộng tự động, độ trễ thấp và phù hợp với các ứng dụng cần xử lý lượng truy cập lớn.
 * **Thiết kế kiến trúc hướng sự kiện (Event-driven Architecture):** Kết hợp Lambda với các dịch vụ AWS như Amazon SQS, Amazon EventBridge giúp hệ thống phản ứng linh hoạt với sự kiện và giảm sự phụ thuộc giữa các thành phần.
