@@ -4,277 +4,128 @@ weight: 1
 pre: " <b> 4.1 </b> "
 ---
 
-# Expense Tracker - Hệ thống quản lý chi tiêu cá nhân trên AWS
-
 ## Mục tiêu
 
-Workshop này hướng dẫn xây dựng và triển khai hệ thống **Expense Tracker (Quản lý chi tiêu cá nhân)** trên nền tảng AWS.
+Workshop này hướng dẫn xây dựng và triển khai ứng dụng **Expense Tracker (Hệ thống quản lý chi tiêu cá nhân)** trên nền tảng AWS bằng cách sử dụng mô hình triển khai Cloud Computing, dịch vụ máy chủ ảo Amazon EC2, hệ thống mạng Amazon VPC, quản lý quyền truy cập AWS IAM và dịch vụ giám sát Amazon CloudWatch.
 
-Hệ thống cho phép người dùng đăng ký tài khoản, đăng nhập bằng JWT, quản lý các khoản thu nhập và chi tiêu cá nhân, theo dõi lịch sử giao dịch và xem thống kê tài chính thông qua giao diện web.
-
-Sau khi hoàn thành workshop, người học có thể hiểu được quy trình phát triển một ứng dụng web hoàn chỉnh từ giai đoạn xây dựng Backend, kết nối cơ sở dữ liệu, triển khai trên môi trường Cloud và giám sát hệ thống bằng các dịch vụ AWS.
+Sau khi hoàn thành workshop, bạn sẽ có thể triển khai một ứng dụng web hoàn chỉnh với khả năng xác thực người dùng, quản lý dữ liệu giao dịch cá nhân, kết nối cơ sở dữ liệu trên Cloud và vận hành ứng dụng trên môi trường AWS.
 
 
 ## 1. Giới thiệu bài toán và giải pháp
 
-Trong cuộc sống hàng ngày, việc quản lý thu nhập và chi tiêu cá nhân là một nhu cầu phổ biến. Tuy nhiên, nhiều người vẫn theo dõi các khoản giao dịch bằng phương pháp thủ công như ghi chú trên giấy hoặc sử dụng bảng tính, gây khó khăn trong việc tổng hợp và phân tích dữ liệu.
+**Expense Tracker** là một ứng dụng web hỗ trợ người dùng quản lý các khoản thu nhập và chi tiêu cá nhân một cách trực quan và hiệu quả.
 
-Hệ thống **Expense Tracker** được xây dựng nhằm giải quyết vấn đề này bằng cách cung cấp một nền tảng trực tuyến giúp người dùng quản lý tài chính cá nhân một cách đơn giản và hiệu quả.
+Trong thực tế, việc theo dõi tài chính cá nhân thường gặp khó khăn khi người dùng phải ghi chép thủ công hoặc sử dụng nhiều công cụ khác nhau. Điều này gây khó khăn trong việc tổng hợp dữ liệu, kiểm soát chi tiêu và phân tích tình hình tài chính.
 
-Ứng dụng hỗ trợ các chức năng chính:
+Hệ thống Expense Tracker được xây dựng nhằm giải quyết vấn đề trên bằng cách cung cấp một nền tảng trực tuyến cho phép người dùng:
 
-- Đăng ký tài khoản người dùng.
-- Đăng nhập và xác thực bằng JWT Token.
-- Thêm các giao dịch thu nhập và chi tiêu.
-- Xem danh sách lịch sử giao dịch.
-- Cập nhật và xóa giao dịch.
-- Phân loại chi tiêu theo danh mục.
-- Hiển thị thống kê tổng thu, tổng chi và số dư.
+- Đăng ký tài khoản cá nhân.
+- Đăng nhập bảo mật bằng JWT Authentication.
+- Quản lý các giao dịch thu nhập và chi tiêu.
+- Thêm, sửa, xóa các khoản giao dịch.
+- Phân loại chi tiêu theo từng nhóm.
+- Theo dõi tổng thu nhập, tổng chi tiêu và số dư hiện tại.
+- Xem lịch sử giao dịch cá nhân.
 
 
-Thay vì chạy ứng dụng hoàn toàn trên máy tính cá nhân, workshop triển khai hệ thống trên nền tảng điện toán đám mây AWS.
+Thay vì chỉ chạy ứng dụng trên môi trường máy tính cá nhân, workshop này triển khai hệ thống trên nền tảng AWS nhằm mô phỏng quy trình triển khai một ứng dụng web thực tế trên Cloud.
 
-Backend của ứng dụng được triển khai trên **Amazon EC2**, giúp cung cấp môi trường máy chủ ổn định để chạy ứng dụng Node.js.
+Backend của hệ thống được xây dựng bằng **Node.js và Express.js**, sau đó được triển khai trên **Amazon EC2**.
 
-Dữ liệu người dùng và giao dịch được lưu trữ trên **MongoDB Atlas**, kết hợp với hệ thống xác thực JWT nhằm đảm bảo mỗi người dùng chỉ có thể truy cập dữ liệu của chính mình.
+Dữ liệu người dùng và dữ liệu giao dịch được lưu trữ trên **MongoDB Atlas**, đảm bảo khả năng mở rộng và quản lý dữ liệu hiệu quả.
 
-Hệ thống được giám sát thông qua **Amazon CloudWatch**, giúp theo dõi trạng thái hoạt động, log ứng dụng và hỗ trợ xử lý lỗi trong quá trình vận hành.
+Hệ thống sử dụng **JWT Token** để xác thực người dùng, đảm bảo mỗi tài khoản chỉ có thể truy cập và quản lý dữ liệu của chính mình.
+
+Toàn bộ quá trình hoạt động của ứng dụng được giám sát thông qua **Amazon CloudWatch**, giúp theo dõi trạng thái máy chủ, log ứng dụng và hỗ trợ xử lý sự cố.
 
 
 ## 2. Kiến trúc hệ thống
 
-Kiến trúc hệ thống Expense Tracker bao gồm các thành phần chính:
+Kiến trúc của hệ thống bao gồm các thành phần chính sau:
 
 * Người dùng (Client Browser)
-* Internet Gateway
-* Amazon VPC
+* Giao diện Web Frontend (HTML/CSS/JavaScript)
+* Amazon VPC (Virtual Private Cloud)
 * Public Subnet
-* Amazon EC2
-* Node.js Express Backend
+* Internet Gateway
+* Amazon EC2 (Backend Server)
+* Node.js Express API
 * MongoDB Atlas Database
-* IAM quản lý quyền truy cập AWS
-* Amazon CloudWatch Monitoring
+* Quản lý danh tính và quyền hạn AWS IAM
+* Giám sát hệ thống Amazon CloudWatch
 
 
 ![Hình 1 – Kiến trúc hệ thống Expense Tracker](/Workshop/images/expense-tracker-architecture.png)
 
-
-*Hình 1 – Kiến trúc hệ thống Expense Tracker trên AWS*
-
-
-Luồng kiến trúc tổng quát:
+*Hình 1 – Kiến trúc hệ thống Expense Tracker trên AWS (Lưu ý: Hãy đảm bảo bạn đã lưu ảnh sơ đồ kiến trúc vào thư mục `/images/expense-tracker-architecture.png`)*
 
 
-
-Ngoài ra hệ thống sử dụng Amazon CloudWatch để thu thập log và giám sát trạng thái hoạt động của ứng dụng.
-
+Kiến trúc tổng quát:
 
 ## 3. Quy trình hoạt động của hệ thống
 
-Luồng hoạt động chính của hệ thống được thực hiện theo các bước:
+Luồng xử lý chính của hệ thống diễn ra theo các bước sau:
 
+1. Người dùng truy cập ứng dụng Expense Tracker thông qua trình duyệt web.
 
-### Bước 1: Người dùng truy cập hệ thống
+2. Người dùng đăng ký hoặc đăng nhập tài khoản. Hệ thống xác thực thông tin người dùng và cấp JWT Token để duy trì phiên đăng nhập.
 
-Người dùng truy cập website thông qua địa chỉ Public IPv4 của Amazon EC2.
+3. Sau khi đăng nhập thành công, người dùng thực hiện các thao tác quản lý chi tiêu như thêm, xem, cập nhật hoặc xóa giao dịch.
 
-Trình duyệt gửi các request đến Backend API được xây dựng bằng Node.js.
+4. Frontend gửi các yêu cầu HTTP (Request) đến Backend thông qua các REST API.
 
+5. Backend Node.js trên Amazon EC2 tiếp nhận và xử lý yêu cầu, kiểm tra quyền truy cập thông qua JWT Token.
 
-### Bước 2: Đăng ký tài khoản
+6. Dữ liệu người dùng và thông tin giao dịch được lưu trữ, truy vấn và cập nhật trên MongoDB Atlas.
 
-Người dùng nhập thông tin:
+7. Hệ thống phân tách dữ liệu theo từng tài khoản người dùng, đảm bảo mỗi người dùng chỉ có thể quản lý các giao dịch của chính mình.
 
-- Họ tên
-- Email
-- Mật khẩu
+8. Amazon EC2 duy trì hoạt động của ứng dụng Backend thông qua PM2, đảm bảo dịch vụ luôn sẵn sàng xử lý yêu cầu.
 
-
-Backend tiếp nhận dữ liệu thông qua API:
-
-![POST /api/auth/register]
-
-
-Mật khẩu được mã hóa bằng thư viện bcrypt trước khi lưu vào MongoDB.
-
-
-### Bước 3: Đăng nhập hệ thống
-
-Người dùng gửi thông tin đăng nhập:
-![POST /api/auth/login]
-
-
-
-Backend kiểm tra thông tin tài khoản trong MongoDB.
-
-Nếu hợp lệ, hệ thống tạo JWT Token và trả về cho Client.
-
-
-JWT Token được lưu trong LocalStorage và được sử dụng trong các request tiếp theo.
-
-
-### Bước 4: Quản lý giao dịch
-
-Sau khi đăng nhập thành công, người dùng có thể:
-
-- Thêm giao dịch mới.
-- Xem danh sách giao dịch.
-- Cập nhật dữ liệu.
-- Xóa giao dịch.
-
-
-Mỗi request gửi lên API đều kèm theo JWT:
-
-![Authorization: Bearer <token>]
-
-
-
-Middleware xác thực token trước khi cho phép truy cập dữ liệu.
-
-
-### Bước 5: Lưu trữ dữ liệu
-
-Backend Node.js sử dụng MongoDB Driver thông qua thư viện Mongoose để giao tiếp với MongoDB Atlas.
-
-
-Dữ liệu giao dịch bao gồm:
-
-- Tên giao dịch.
-- Số tiền.
-- Loại giao dịch.
-- Danh mục.
-- Ngày giao dịch.
-- Người sở hữu dữ liệu.
-
-
-Mỗi giao dịch được liên kết với User ID nhằm đảm bảo tính riêng tư.
-
-
-### Bước 6: Triển khai trên AWS EC2
-
-Ứng dụng Backend được triển khai trên Amazon EC2:
-
-
-- Cấu hình Ubuntu Server.
-- Cài đặt Node.js.
-- Cài đặt npm packages.
-- Chạy ứng dụng bằng PM2.
-- Cấu hình Security Group mở cổng 3000.
-
-
-PM2 giúp ứng dụng duy trì hoạt động ngay cả khi server được khởi động lại.
-
-
-### Bước 7: Giám sát hệ thống
-
-Amazon CloudWatch được sử dụng để:
-
-- Theo dõi trạng thái EC2.
-- Kiểm tra CPU, RAM.
-- Theo dõi log ứng dụng.
-- Phát hiện lỗi trong quá trình chạy.
-
+9. Nhật ký hoạt động và trạng thái hệ thống được theo dõi thông qua Amazon CloudWatch để hỗ trợ giám sát và xử lý sự cố.
 
 ## 4. Các dịch vụ được sử dụng
 
-
 Workshop sử dụng các dịch vụ AWS sau:
 
+* **Dịch vụ tính toán (Compute)**
+  * Amazon EC2
 
-## Compute
+* **Mạng (Networking)**
+  * Amazon VPC
+  * Public Subnet
+  * Internet Gateway
 
-### Amazon EC2
+* **Cơ sở dữ liệu (Database)**
+  * MongoDB Atlas
 
-Được sử dụng để triển khai Backend Node.js.
+* **Bảo mật & Quản lý (Security & Management)**
+  * AWS Identity and Access Management (IAM)
 
-Chức năng:
-
-- Cung cấp môi trường chạy ứng dụng.
-- Quản lý tài nguyên máy chủ.
-- Cho phép truy cập thông qua Public IPv4.
-
-
-## Networking
-
-### Amazon VPC
-
-Tạo môi trường mạng riêng cho hệ thống.
-
-
-### Public Subnet
-
-Chứa EC2 Instance có khả năng truy cập Internet.
-
-
-### Internet Gateway
-
-Kết nối VPC với Internet.
-
-
-## Security
-
-### AWS IAM
-
-Quản lý quyền truy cập AWS.
-
-
-IAM được sử dụng để:
-
-- Tạo User.
-- Phân quyền quản lý tài nguyên.
-- Kiểm soát quyền truy cập dịch vụ AWS.
-
-
-## Database
-
-### MongoDB Atlas
-
-Lưu trữ:
-
-- Thông tin người dùng.
-- Danh sách giao dịch.
-- Dữ liệu tài chính cá nhân.
-
-
-## Monitoring
-
-### Amazon CloudWatch
-
-Dùng để:
-
-- Thu thập log.
-- Theo dõi hiệu suất.
-- Kiểm tra trạng thái hệ thống.
+* **Giám sát (Monitoring)**
+  * Amazon CloudWatch
 
 
 ## 5. Kết quả đạt được
 
+Sau khi hoàn thành workshop, bạn sẽ có thể:
 
-Sau khi hoàn thành workshop, người học có thể:
+* Xây dựng ứng dụng quản lý chi tiêu cá nhân với kiến trúc Web Application.
 
+* Triển khai Backend Node.js trên môi trường máy chủ Amazon EC2.
 
-* Xây dựng ứng dụng quản lý chi tiêu bằng Node.js và Express.
+* Xây dựng hệ thống xác thực người dùng bằng JWT và quản lý quyền truy cập dữ liệu.
 
-* Thiết kế hệ thống đăng nhập sử dụng JWT Authentication.
+* Thiết kế và triển khai REST API phục vụ các chức năng quản lý giao dịch.
 
-* Kết nối Backend với MongoDB Atlas.
+* Kết nối ứng dụng với cơ sở dữ liệu MongoDB Atlas để lưu trữ thông tin người dùng và dữ liệu chi tiêu.
 
-* Xây dựng REST API phục vụ quản lý giao dịch.
+* Cấu hình hệ thống mạng AWS bao gồm VPC, Subnet và Internet Gateway.
 
-* Triển khai ứng dụng Web trên Amazon EC2.
+* Quản lý quyền truy cập tài nguyên AWS thông qua IAM.
 
-* Cấu hình VPC, Subnet và Internet Gateway.
+* Sử dụng PM2 để duy trì và quản lý tiến trình ứng dụng trên máy chủ.
 
-* Quản lý quyền truy cập AWS bằng IAM.
+* Theo dõi trạng thái hoạt động, log và lỗi hệ thống thông qua Amazon CloudWatch.
 
-* Sử dụng PM2 để quản lý tiến trình Node.js.
-
-* Giám sát ứng dụng thông qua Amazon CloudWatch.
-
-* Hiểu được quy trình triển khai một ứng dụng Web thực tế trên nền tảng Cloud.
-
-
-Sau khi hoàn thành workshop, toàn bộ tài nguyên AWS có thể được xóa để tránh phát sinh chi phí ngoài mong muốn.
-
-
-
+* Hiểu được quy trình triển khai một ứng dụng Web thực tế trên nền tảng Cloud AWS.
