@@ -26,7 +26,7 @@ Check the PM2 status:
 pm2 status
 ```
 
-![alt text](../../images/4-Workshop/4.9/pm2status+api health.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
 
 Check the application logs:
 
@@ -34,7 +34,7 @@ Check the application logs:
 pm2 logs expense-tracker
 ```
 
-![alt text](../../images/4-Workshop/4.12/ubuntu_check_log.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/ubuntu_check_log.png)
 
 ---
 
@@ -54,7 +54,7 @@ Response:
 }
 ```
 
-![alt text](../../images/4-Workshop/4.9/pm2status+api health.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
 
 The Health API confirms that the Node.js Backend is running correctly on EC2.
 
@@ -72,7 +72,7 @@ Email
 Password
 ```
 
-![alt text](../../images/4-Workshop/4.12/signup_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/signup_test.png)
 
 Check the created User in:
 
@@ -82,7 +82,7 @@ MongoDB Atlas
 → users
 ```
 
-![alt text](../../images/4-Workshop/4.12/database_signup_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_signup_test.png)
 
 The User information is stored in the `users` collection.
 
@@ -102,7 +102,7 @@ JWT
 Dashboard
 ```
 
-![alt text](../../images/4-Workshop/4.12/login test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/login-test.png)
 
 After successful authentication, the user is redirected to the Dashboard.
 
@@ -124,7 +124,7 @@ Category: Food
 Date: 2026-09-30
 ```
 
-![alt text](../../images/4-Workshop/4.6/add_trans.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/add_trans.png)
 
 Check the transaction in:
 
@@ -150,7 +150,7 @@ category
 date
 ```
 
-![alt text](../../images/4-Workshop/4.12/database_add_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_add_test.png)
 
 ---
 
@@ -208,17 +208,17 @@ The deleted transaction should no longer appear in the user's transaction list.
 
 ## 9. Test User Data Isolation
 
-![alt text](../../images/4-Workshop/4.12/database_user_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_user_test.png)
 
 Create two user accounts:
 
 ### User A
 
-![alt text](../../images/4-Workshop/4.12/test_user1.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user1.png)
 
 ### User B
 
-![alt text](../../images/4-Workshop/4.12/test_user2.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user2.png)
 
 Create a transaction for User A.
 
@@ -250,7 +250,7 @@ Response:
 401 Unauthorized
 ```
 
-![alt text](../../images/4-Workshop/4.7/callapiWithoutJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithoutJWT.png)
 
 Then send:
 
@@ -258,7 +258,7 @@ Then send:
 Authorization: Bearer <TOKEN>
 ```
 
-![alt text](../../images/4-Workshop/4.7/callapiWithJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithJWT.png)
 
 The API can be accessed after successful authentication.
 
@@ -281,7 +281,7 @@ Test result:
 }
 ```
 
-![alt text](../../images/4-Workshop/4.10/lambdaTest.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaTest.png)
 
 Check the generated statistics in:
 
@@ -308,9 +308,9 @@ Target:
 expense-tracker-statistics
 ```
 
-![alt text](../../images/4-Workshop/4.11/EventBridge2.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge2.png)
 
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogEvent.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogEvent.png)
 
 Check the Scheduler status and the Lambda invocations.
 
@@ -340,7 +340,7 @@ Users found: 2
 Statistics saved for user: ...
 ```
 
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogStream.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogStream.png)
 
 These logs confirm the Lambda execution and the statistics processing process.
 
@@ -350,29 +350,8 @@ These logs confirm the Lambda execution and the statistics processing process.
 
 The complete system can be represented as:
 
-```text
-Browser
-   │
-   ▼
-Amazon EC2
-   │
-   ├── Node.js
-   └── Express
-          │
-          ▼
-     MongoDB Atlas
-          ▲
-          │
-       Lambda
-          ▲
-          │
-     EventBridge
-
-Lambda
-   │
-   ▼
-CloudWatch
-```
+![Figure 1 – Expense Tracker System Architecture](/Workshop/images/architecture-diagram.png)
+*Figure 1 – Expense Tracker System Architecture*
 
 ---
 
@@ -408,29 +387,5 @@ AWS Lambda processes expense statistics and stores the results in the `statistic
 
 The final architecture is:
 
-```text
-User
- │
- ▼
-Browser
- │
- ▼
-EC2
- │
- ├── Frontend
- └── Backend
-        │
-        ▼
-   MongoDB Atlas
-        ▲
-        │
-      Lambda
-        ▲
-        │
-   EventBridge
-
-Lambda
-  │
-  ▼
-CloudWatch
-```
+![Figure 1 – Expense Tracker System Architecture](/Workshop/images/architecture-diagram.png)
+*Figure 1 – Expense Tracker System Architecture*

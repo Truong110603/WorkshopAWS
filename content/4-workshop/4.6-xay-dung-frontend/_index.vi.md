@@ -36,7 +36,7 @@ Name
 Email
 Password
 ```
-![alt text](../../images/4-Workshop/4.6/signup.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/signup.png)
 
 
 
@@ -51,7 +51,7 @@ Email
 Password
 ```
 
-![Màn hình login](../../images/4-Workshop/4.6/Login.png)
+![Màn hình login](/WorkshopAWS/images/4-Workshop/4.6/Login.png)
 
 Sau khi đăng nhập, token được lưu vào Local Storage:
 
@@ -99,7 +99,7 @@ Dashboard hiển thị:
 - Danh sách giao dịch.
 - Form thêm giao dịch.
 - Biểu đồ theo Category.
-![alt text](../../images/4-Workshop/4.6/dashbroadfull.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/dashbroadfull.png)
 ---
 
 ## 6. Chart.js
@@ -115,7 +115,7 @@ Dữ liệu biểu đồ lấy từ:
 ```text
 GET http://localhost:3000/api/expenses/summary/category
 ```
-![alt text](../../images/4-Workshop/4.6/Chart.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/Chart.png)
 Sau đó tạo Doughnut Chart để hiển thị tỷ lệ chi tiêu theo Category.
 
 ---
@@ -137,14 +137,14 @@ Frontend gửi:
 ```text
 POST http://localhost:3000/api/expenses
 ```
-![alt text](../../images/4-Workshop/4.6/add_trans.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/add_trans.png)
 Sau khi thêm thành công, Dashboard cập nhật lại danh sách và số liệu.
 
 
 ---
 
 ## 8. Giao dịch gần đây
-![alt text](../../images/4-Workshop/4.6/recent_trans.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/recent_trans.png)
 * Cho phép người dùng xem trực tiếp các giao dịch gần đây.
 
 ---
@@ -157,7 +157,7 @@ Khi Logout:
 localStorage.removeItem("token");
 localStorage.removeItem("user");
 ```
-![alt text](../../images/4-Workshop/4.6/logout.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/logout.png)
 
 Sau đó chuyển về trang Login.
 

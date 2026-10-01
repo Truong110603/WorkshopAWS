@@ -61,7 +61,7 @@ Request:
 }
 ```
 
-![alt text](../../images/4-Workshop/4.5/Post_API.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.5/Post_API.png)
 
 The Backend performs the following operations:
 

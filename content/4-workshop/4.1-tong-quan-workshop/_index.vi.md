@@ -37,35 +37,10 @@ Dữ liệu của mỗi người dùng được phân biệt thông qua `userId`
 
 ## 2. Kiến trúc hệ thống
 
-```text
-                         ┌──────────────────┐
-                         │    EventBridge    │
-                         │  Daily Scheduler  │
-                         └────────┬─────────┘
-                                  │
-                                  ▼
-┌──────────┐              ┌───────────────┐
-│  Browser │              │ AWS Lambda    │
-│   User   │              │ Statistics    │
-└────┬─────┘              └───────┬───────┘
-     │                            │
-     ▼                            ▼
-┌──────────┐              ┌────────────────┐
-│   EC2    │─────────────►│ MongoDB Atlas  │
-│ Node.js  │              │ expensetracker │
-│ Express  │◄─────────────│                │
-└────┬─────┘              └────────────────┘
-     │
-     ▼
-┌──────────────┐
-│   Dashboard  │
-│   Chart.js   │
-└──────────────┘
 
-EC2 / Lambda → CloudWatch
-```
 
-<!-- IMAGE: Chèn ảnh kiến trúc Expense Tracker tại đây nếu có -->
+![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/Workshop/images/architecture-diagram.png)
+*Hình 1 – Kiến trúc hệ thống quản lý chi tiêu
 
 ---
 
@@ -109,7 +84,7 @@ Backend truy vấn MongoDB Atlas và trả về:
 - Thống kê theo danh mục.
 
 Dashboard sử dụng Chart.js để hiển thị biểu đồ.
-![alt text](../../images/4-Workshop/4.2/dashboard.jpg)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/dashboard.jpg)
 
 ### Bước 5 – AWS Lambda
 

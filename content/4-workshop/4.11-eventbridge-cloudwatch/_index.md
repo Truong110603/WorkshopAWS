@@ -22,7 +22,7 @@ Create an EventBridge Scheduler:
 expense-tracker-daily-statistics
 ```
 
-![alt text](../../images/4-Workshop/4.11/EventBridge1.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge1.png)
 
 Set the Target to:
 
@@ -30,7 +30,7 @@ Set the Target to:
 expense-tracker-statistics
 ```
 
-![alt text](../../images/4-Workshop/4.11/EventBridge3.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge3.png)
 
 ---
 
@@ -42,7 +42,7 @@ The Scheduler uses:
 rate(1 day)
 ```
 
-![alt text](../../images/4-Workshop/4.11/EventBridge2.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge2.png)
 
 The Lambda function is invoked automatically according to the configured schedule.
 
@@ -99,7 +99,7 @@ AWS Console
 → Log groups
 ```
 
-![alt text](../../images/4-Workshop/4.11/Cloudwatchgroup.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/Cloudwatchgroup.png)
 
 ---
 
@@ -107,7 +107,7 @@ AWS Console
 
 The Lambda execution logs contain information generated during the processing:
 
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogStream.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogStream.png)
 
 The logs can be used to check the Lambda execution process and processing results.
 
@@ -115,7 +115,7 @@ The logs can be used to check the Lambda execution process and processing result
 
 ### c. CloudWatch Alarms
 
-![alt text](../../images/4-Workshop/4.11/CloudwatchAlarms.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchAlarms.png)
 
 CloudWatch Alarms can be used to generate notifications when a monitored metric exceeds a configured threshold.
 
@@ -133,7 +133,7 @@ CloudWatch is used to monitor:
 - Processing results.
 - Messages generated during execution.
 
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogEvent.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogEvent.png)
 
 ---
 

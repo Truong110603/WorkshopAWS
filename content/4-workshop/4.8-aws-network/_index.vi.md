@@ -43,7 +43,7 @@ Project không sử dụng CloudTrail.
 
 ## 3. Tạo VPC
 
-![alt text](../../images/4-Workshop/4.8/vpc.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/vpc.png)
 
 Thông tin:
 
@@ -68,7 +68,7 @@ Subnet thuộc:
 ```text
 expense-tracker-vpc
 ```
-![alt text](../../images/4-Workshop/4.8/subnet.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/subnet.png)
 ---
 
 ## 5. Internet Gateway
@@ -84,7 +84,7 @@ Attach Internet Gateway vào:
 ```text
 expense-tracker-vpc
 ```
-![alt text](../../images/4-Workshop/4.8/internetgate.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/internetgate.png)
 ---
 
 ## 6. Route Table
@@ -97,7 +97,7 @@ Route:
 Destination: 0.0.0.0/0
 Target: Internet Gateway
 ```
-![alt text](<../../images/4-Workshop/4.8/route table.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/route-table.png)
 Associate Route Table với Public Subnet.
 
 ---
@@ -116,7 +116,7 @@ Inbound Rules:
 |---|---:|---|
 | SSH | 22 | Kết nối EC2 |
 | Custom TCP | 3000 | Node.js |
-![alt text](<../../images/4-Workshop/4.8/security gr.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/security-gr.png)
 ---
 
 ## 8. Mô hình Network

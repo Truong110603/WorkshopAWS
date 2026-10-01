@@ -85,7 +85,7 @@ users
 expenses
 statistics
 ```
-![alt text](<../../images/4-Workshop/4.2/mongodb database.jpg.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/mongodb-database.jpg.png)
 ---
 
 ## 5. Chuẩn bị mã nguồn
@@ -110,7 +110,7 @@ models/
 middleware/
 .env
 ```
-![alt text](../../images/4-Workshop/4.2/cau-truc-project.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/cau-truc-project.png)
 
 Frontend chứa giao diện Dashboard và các file JavaScript/CSS.
 

@@ -83,7 +83,7 @@ index.js
 
 Create the Lambda function in the AWS Management Console.
 
-![alt text](../../images/4-Workshop/4.10/lambdaoverview.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaoverview.png)
 
 Function name:
 
@@ -103,7 +103,7 @@ Handler:
 index.handler
 ```
 
-![alt text](../../images/4-Workshop/4.10/LambdaFunction.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/LambdaFunction.png)
 
 The `index.handler` function is the entry point executed by AWS Lambda.
 
@@ -123,7 +123,7 @@ The database used by the application is:
 expensetracker
 ```
 
-![alt text](../../images/4-Workshop/4.10/lambdaCodeTest.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaCodeTest.png)
 
 The MongoDB connection string is stored as an environment variable instead of being directly written into the source code.
 
@@ -166,7 +166,7 @@ The Lambda function returns:
 }
 ```
 
-![alt text](../../images/4-Workshop/4.10/lambdaTest.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaTest.png)
 
 The response indicates that the Lambda function completed the statistics processing successfully.
 

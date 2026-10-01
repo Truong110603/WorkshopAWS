@@ -42,7 +42,7 @@ Email
 Password
 ```
 
-![alt text](../../images/4-Workshop/4.6/signup.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/signup.png)
 
 ---
 
@@ -56,7 +56,7 @@ Email
 Password
 ```
 
-![Login Screen](../../images/4-Workshop/4.6/Login.png)
+![Login Screen](/WorkshopAWS/images/4-Workshop/4.6/Login.png)
 
 After a successful login, the JWT Token is stored in Local Storage:
 
@@ -107,7 +107,7 @@ The Dashboard displays:
 - Add transaction form.
 - Expense chart by Category.
 
-![alt text](../../images/4-Workshop/4.6/dashbroadfull.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/dashbroadfull.png)
 
 ---
 
@@ -125,7 +125,7 @@ The chart data is retrieved from:
 GET http://localhost:3000/api/expenses/summary/category
 ```
 
-![alt text](../../images/4-Workshop/4.6/Chart.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/Chart.png)
 
 The Frontend uses the retrieved data to create a Doughnut Chart showing the expense distribution by Category.
 
@@ -155,7 +155,7 @@ POST http://localhost:3000/api/expenses
 
 The request includes the JWT Token in the Authorization Header.
 
-![alt text](../../images/4-Workshop/4.6/add_trans.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/add_trans.png)
 
 After the transaction is successfully added, the Dashboard reloads the transaction list and updated statistics.
 
@@ -163,7 +163,7 @@ After the transaction is successfully added, the Dashboard reloads the transacti
 
 ## 8. Recent Transactions
 
-![alt text](../../images/4-Workshop/4.6/recent_trans.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/recent_trans.png)
 
 The Recent Transactions section allows users to view their latest transactions directly on the Dashboard.
 
@@ -179,7 +179,7 @@ localStorage.removeItem("token");
 localStorage.removeItem("user");
 ```
 
-![alt text](../../images/4-Workshop/4.6/logout.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/logout.png)
 
 After logout, the user is redirected to the Login page.
 

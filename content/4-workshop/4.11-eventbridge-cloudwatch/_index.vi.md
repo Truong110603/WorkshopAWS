@@ -21,13 +21,13 @@ Tạo Scheduler:
 ```text
 expense-tracker-daily-statistics
 ```
-![alt text](../../images/4-Workshop/4.11/EventBridge1.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge1.png)
 Target:
 
 ```text
 expense-tracker-statistics
 ```
-![alt text](../../images/4-Workshop/4.11/EventBridge3.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge3.png)
 ---
 
 ## b. Schedule
@@ -37,7 +37,7 @@ Schedule sử dụng:
 ```text
 rate(1 day)
 ```
-![alt text](../../images/4-Workshop/4.11/EventBridge2.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge2.png)
 Lambda được gọi tự động theo lịch.
 
 Trong quá trình kiểm tra có thể sử dụng schedule ngắn hơn để xác nhận Scheduler hoạt động.
@@ -86,18 +86,18 @@ AWS Console
 → Logs
 → Log groups
 ```
-![alt text](../../images/4-Workshop/4.11/Cloudwatchgroup.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/Cloudwatchgroup.png)
 ---
 
 ## b. Nội dung Log
 
 Các thông tin được ghi trong quá trình Lambda chạy:
 
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogStream.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogStream.png)
 
 ---
 ## c. Cloudwatch Alarms
-![alt text](../../images/4-Workshop/4.11/CloudwatchAlarms.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchAlarms.png)
  Dùng để cảnh báo khi 1 giá trị vượt quá ngưỡng đã đặt, cụ thể như trên hình đặt **CPUUtilization** đặt ở ngưỡng 80%
 
 ---
@@ -110,7 +110,7 @@ CloudWatch được sử dụng để kiểm tra:
 - Log của Function.
 - Kết quả xử lý.
 - Các thông báo trong quá trình chạy.
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogEvent.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogEvent.png)
 ---
 
 ## 7. Luồng hoàn chỉnh

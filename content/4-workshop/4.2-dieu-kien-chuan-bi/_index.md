@@ -87,7 +87,7 @@ expenses
 statistics
 ```
 
-![alt text](../../images/4-Workshop/4.2/mongodb%20database.jpg.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/mongodb-database.jpg.png)
 
 ---
 
@@ -119,7 +119,7 @@ middleware/
 .env
 ```
 
-![alt text](../../images/4-Workshop/4.2/cau-truc-project.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/cau-truc-project.png)
 
 The Frontend contains the Dashboard interface and JavaScript/CSS files.
 

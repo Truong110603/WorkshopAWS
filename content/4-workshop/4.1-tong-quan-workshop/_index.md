@@ -37,33 +37,8 @@ Each user's data is identified using `userId`.
 
 ## 2. System Architecture
 
-```text
-                         ┌──────────────────┐
-                         │    EventBridge   │
-                         │  Daily Scheduler │
-                         └────────┬─────────┘
-                                  │
-                                  ▼
-┌──────────┐              ┌───────────────┐
-│  Browser │              │ AWS Lambda    │
-│   User   │              │ Statistics    │
-└────┬─────┘              └───────┬───────┘
-     │                            │
-     ▼                            ▼
-┌──────────┐              ┌────────────────┐
-│   EC2    │─────────────►│ MongoDB Atlas  │
-│ Node.js  │              │ expensetracker │
-│ Express  │◄─────────────│                │
-└────┬─────┘              └────────────────┘
-     │
-     ▼
-┌──────────────┐
-│   Dashboard  │
-│   Chart.js   │
-└──────────────┘
-
-EC2 / Lambda → CloudWatch
-```
+![Figure 1 – Expense Tracker System Architecture](/Workshop/images/architecture-diagram.png)
+*Figure 1 – Expense Tracker System Architecture*
 
 <!-- IMAGE: Insert the Expense Tracker architecture image here if available -->
 
@@ -110,7 +85,7 @@ The Backend queries MongoDB Atlas and returns:
 
 The Dashboard uses Chart.js to display expense charts.
 
-![alt text](../../images/4-Workshop/4.2/dashboard.jpg)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/dashboard.jpg)
 
 ### Step 5 – AWS Lambda
 

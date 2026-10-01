@@ -63,7 +63,7 @@ The application follows a cloud-native container architecture deployed on AWS ma
 
 ## Solution Architecture
 
-![System Architecture](/images/2-Proposal/system_architecture.png)
+![System Architecture](/WorkshopAWS/images/2-Proposal/system_architecture.png)
 
 ## AWS Services Utilized
 

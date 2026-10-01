@@ -24,7 +24,7 @@ expense-tracker-vpc
 expense-tracker-public-subnet
 ```
 
-![alt text](../../images/4-Workshop/4.9/EC2instances.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/EC2instances.png)
 
 Security Group:
 
@@ -39,7 +39,7 @@ The following ports are used:
 3000
 ```
 
-![alt text](../../images/4-Workshop/4.9/EC2instances 2.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/EC2instances-2.png)
 
 Port `22` is used for SSH connections.
 
@@ -55,7 +55,7 @@ Connect to the EC2 instance:
 ssh -i ".\expense-tracker-key.pem" ubuntu@<PUBLIC-IP>
 ```
 
-![alt text](../../images/4-Workshop/4.9/ubuntu.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/ubuntu.png)
 
 After a successful connection, the terminal is connected to the Ubuntu EC2 instance.
 
@@ -157,7 +157,7 @@ Response:
 }
 ```
 
-![alt text](../../images/4-Workshop/4.9/pm2status+api health.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
 
 The Backend is running successfully on port `3000`.
 
@@ -197,7 +197,7 @@ Restart the application:
 pm2 restart expense-tracker
 ```
 
-![alt text](../../images/4-Workshop/4.9/pm2status.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status.png)
 
 PM2 runs the Node.js application as a background process and allows the application to be restarted when necessary.
 

@@ -23,7 +23,7 @@ expense-tracker-vpc
     ↓
 expense-tracker-public-subnet
 ```
-![alt text](../../images/4-Workshop/4.9/EC2instances.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/EC2instances.png)
 Security Group:
 
 ```text
@@ -36,7 +36,7 @@ Port sử dụng:
 22
 3000
 ```
-![alt text](<../../images/4-Workshop/4.9/EC2instances 2.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/EC2instances-2.png)
 ---
 
 ## 2. SSH
@@ -46,7 +46,7 @@ Kết nối đến EC2:
 ```bash
 ssh -i ".\expense-tracker-key.pem" ubuntu@47.129.176.80
 ```
-![alt text](../../images/4-Workshop/4.9/ubuntu.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/ubuntu.png)
 ---
 
 ## 3. Tạo thư mục project
@@ -132,7 +132,7 @@ Response:
     "status": "ok"
 }
 ```
-![alt text](<../../images/4-Workshop/4.9/pm2status+api health.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
 ---
 
 ## 8. Cài PM2
@@ -165,7 +165,7 @@ Restart:
 ```bash
 pm2 restart expense-tracker
 ```
-![alt text](../../images/4-Workshop/4.9/pm2status.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status.png)
 ---
 
 ## 9. Truy cập ứng dụng

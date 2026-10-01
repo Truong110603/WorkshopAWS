@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 03/08/2026 đến ngày 27/09/2026
 
-![Ảnh đại diện của bạn](images/avatar.jpg)
+![Ảnh đại diện của bạn](/WorkshopAWS/images/avatar.jpg)
 
 
 
@@ -33,6 +33,6 @@ chapter: false
 
 1.  [Worklog](1-Worklog/)
 2.  [Proposal](2-Proposal/)
-3.  [Workshop](5-Workshop/)
-4.  [Tự đánh giá](6-Self-evaluation/)
-5.  [Chia sẻ, đóng góp ý kiến](7-Feedback/)
+4.  [Workshop](4-workshop/)
+5.  [Tự đánh giá](5-Self-evaluation/)
+6.  [Chia sẻ, đóng góp ý kiến](6-Feedback/)

@@ -59,7 +59,7 @@ lambda-statistics/
 ---
 
 ## 4. Tạo Lambda Function
-![alt text](../../images/4-Workshop/4.10/lambdaoverview.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaoverview.png)
 Tên Function:
 
 ```text
@@ -77,7 +77,7 @@ Handler:
 ```text
 index.handler
 ```
-![alt text](../../images/4-Workshop/4.10/LambdaFunction.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/LambdaFunction.png)
 ---
 
 ## 5. Environment Variable
@@ -93,7 +93,7 @@ Database:
 ```text
 expensetracker
 ```
-![alt text](../../images/4-Workshop/4.10/lambdaCodeTest.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaCodeTest.png)
 ---
 
 ## 6. Luồng xử lý
@@ -129,7 +129,7 @@ Test Lambda trả về:
 }
 ```
 
-![alt text](../../images/4-Workshop/4.10/lambdaTest.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaTest.png)
 
 ---
 

@@ -55,7 +55,7 @@ Hệ thống lưu trữ dữ liệu tập trung trên cơ sở dữ liệu đám
 ## 3. Kiến trúc và Thiết kế Kỹ thuật (Architecture & Technical Design)
 
 ## Sơ đồ kiến trúc (Architecture Diagram)
-![Sơ đồ kiến trúc Hệ thống Tự động xử lý hình ảnh Serverless](/Workshop/images/sodo.jpg)
+![Sơ đồ kiến trúc Hệ thống Tự động xử lý hình ảnh Serverless](/WorkshopAWS/images/sodo.jpg)
 
 ### 3.1. Các dịch vụ AWS sử dụng (AWS Services Selection)
 * **ReactJS + TypeScript (Frontend):** Sử dụng để xây dựng giao diện người dùng hiện đại, có khả năng tương tác cao.

@@ -105,7 +105,7 @@ The database used by the project is:
 expensetracker
 ```
 
-![alt text](../../images/4-Workshop/4.3/env-file.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.3/env-file.png)
 
 > Do not commit the `.env` file to GitHub because it contains sensitive configuration such as the MongoDB connection string and JWT secret.
 
@@ -119,7 +119,7 @@ Open a terminal in the Backend directory and run:
 node server.js
 ```
 
-![alt text](../../images/4-Workshop/4.2/runbackend.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/runbackend.png)
 
 Check the health endpoint:
 
@@ -127,7 +127,7 @@ Check the health endpoint:
 GET http://localhost:3000/api/health
 ```
 
-![alt text](../../images/4-Workshop/4.2/apihealth.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/apihealth.png)
 
 Response:
 

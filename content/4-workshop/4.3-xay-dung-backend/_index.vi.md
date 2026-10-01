@@ -98,7 +98,7 @@ Database sử dụng:
 ```text
 expensetracker
 ```
-![alt text](../../images/4-Workshop/4.3/env-file.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.3/env-file.png)
 ---
 
 ## 4. Chạy Backend
@@ -108,14 +108,14 @@ Tại thư mục Backend:
 ```bash
 node server.js
 ```
-![alt text](../../images/4-Workshop/4.2/runbackend.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/runbackend.png)
 
 Kiểm tra:
 
 ```text
 GET http://localhost:3000/api/health
 ```
-![alt text](../../images/4-Workshop/4.2/apihealth.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.2/apihealth.png)
 Response:
 
 ```json

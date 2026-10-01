@@ -1,6 +1,4 @@
 baseURL = "https://truong110603.github.io/WorkshopAWS/"
-relativeURLs = true
-canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo

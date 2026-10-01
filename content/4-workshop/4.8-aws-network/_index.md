@@ -52,7 +52,7 @@ The project does not use CloudTrail.
 
 Create a VPC with the following configuration:
 
-![alt text](../../images/4-Workshop/4.8/vpc.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/vpc.png)
 
 ```text
 Name: expense-tracker-vpc
@@ -80,7 +80,7 @@ The Subnet belongs to:
 expense-tracker-vpc
 ```
 
-![alt text](../../images/4-Workshop/4.8/subnet.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/subnet.png)
 
 The EC2 instance is placed in this Public Subnet so that it can receive Internet traffic through the Internet Gateway.
 
@@ -100,7 +100,7 @@ Attach the Internet Gateway to:
 expense-tracker-vpc
 ```
 
-![alt text](../../images/4-Workshop/4.8/internetgate.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/internetgate.png)
 
 The Internet Gateway provides connectivity between the VPC and the Internet.
 
@@ -118,7 +118,7 @@ Destination: 0.0.0.0/0
 Target: Internet Gateway
 ```
 
-![alt text](../../images/4-Workshop/4.8/route table.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/route-table.png)
 
 Associate the Route Table with:
 
@@ -145,7 +145,7 @@ Configure the following Inbound Rules:
 | SSH | 22 | Connect to EC2 |
 | Custom TCP | 3000 | Node.js application |
 
-![alt text](../../images/4-Workshop/4.8/security gr.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.8/security-gr.png)
 
 Port `22` is used for SSH connections to the EC2 instance.
 

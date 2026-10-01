@@ -207,7 +207,7 @@ Authorization: Bearer <TOKEN>
 ## 10. Kiểm tra Authentication
 
 Gọi API Expense không có token:
-![alt text](../../images/4-Workshop/4.7/callapiWithoutJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithoutJWT.png)
 ```text
 GET http://localhost:3000/api/expenses
 ```
@@ -223,7 +223,7 @@ Sau khi thêm:
 ```text
 Authorization: Bearer <TOKEN>
 ```
-![alt text](../../images/4-Workshop/4.7/callapiWithJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithJWT.png)
 API có thể truy cập.
 
 ---

@@ -71,7 +71,7 @@ Request body:
 }
 ```
 
-![alt text](../../images/4-Workshop/4.5/Post_API.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.5/Post_API.png)
 
 Backend xác thực JWT và tự động lấy `userId` từ User đang đăng nhập.
 

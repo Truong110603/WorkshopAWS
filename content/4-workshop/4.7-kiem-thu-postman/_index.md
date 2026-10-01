@@ -236,7 +236,7 @@ The API deletes the specified transaction belonging to the authenticated user.
 
 Call the Expense API without a Token:
 
-![alt text](../../images/4-Workshop/4.7/callapiWithoutJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithoutJWT.png)
 
 ```text
 GET http://localhost:3000/api/expenses
@@ -254,7 +254,7 @@ Then add the JWT:
 Authorization: Bearer <TOKEN>
 ```
 
-![alt text](../../images/4-Workshop/4.7/callapiWithJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithJWT.png)
 
 The API can then be accessed after successful authentication.
 

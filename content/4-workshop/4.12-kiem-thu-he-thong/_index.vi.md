@@ -25,13 +25,13 @@ Kiểm tra PM2:
 ```bash
 pm2 status
 ```
-![alt text](<../../images/4-Workshop/4.9/pm2status+api health.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
 Kiểm tra log:
 
 ```bash
 pm2 logs expense-tracker
 ```
-![alt text](../../images/4-Workshop/4.12/ubuntu_check_log.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/ubuntu_check_log.png)
 ---
 
 ## 2. Health API
@@ -47,7 +47,7 @@ Response:
     "status": "ok"
 }
 ```
-![alt text](<../../images/4-Workshop/4.9/pm2status+api health.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
 ---
 
 ## 3. Kiểm tra Register
@@ -59,7 +59,7 @@ Name
 Email
 Password
 ```
-![alt text](../../images/4-Workshop/4.12/signup_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/signup_test.png)
 Kiểm tra User trong:
 
 ```text
@@ -67,7 +67,7 @@ MongoDB Atlas
 → expensetracker
 → users
 ```
-![alt text](../../images/4-Workshop/4.12/database_signup_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_signup_test.png)
 ---
 
 ## 4. Kiểm tra Login
@@ -83,7 +83,7 @@ JWT
    ↓
 Dashboard
 ```
-![alt text](<../../images/4-Workshop/4.12/login test.png>)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/login-test.png)
 ---
 
 ## 5. Thêm giao dịch
@@ -97,7 +97,7 @@ Type: expense
 Category: Food
 Date: 2026-09-30
 ```
-![alt text](../../images/4-Workshop/4.6/add_trans.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/add_trans.png)
 Kiểm tra trong:
 
 ```text
@@ -116,7 +116,7 @@ type
 category
 date
 ```
-![alt text](../../images/4-Workshop/4.12/database_add_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_add_test.png)
 ---
 
 ## 6. Kiểm tra Dashboard
@@ -162,16 +162,16 @@ expenses
 ---
 
 ## 9. Kiểm tra User Data
-![alt text](../../images/4-Workshop/4.12/database_user_test.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_user_test.png)
 Tạo hai tài khoản:
 
 
 **User A**
-![alt text](../../images/4-Workshop/4.12/test_user1.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user1.png)
 
 
 **User B**
-![alt text](../../images/4-Workshop/4.12/test_user2.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user2.png)
 
 Tạo giao dịch cho User A.
 
@@ -201,13 +201,13 @@ Response:
 ```text
 401 Unauthorized
 ```
-![alt text](../../images/4-Workshop/4.7/callapiWithoutJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithoutJWT.png)
 Gửi:
 
 ```text
 Authorization: Bearer <TOKEN>
 ```
-![alt text](../../images/4-Workshop/4.7/callapiWithJWT.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithJWT.png)
 API có thể truy cập.
 
 ---
@@ -228,7 +228,7 @@ Kết quả:
     "body": "{\"message\":\"Thống kê chi tiêu thành công\",\"expensesFound\":16,\"usersProcessed\":2}"
 }
 ```
-![alt text](../../images/4-Workshop/4.10/lambdaTest.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaTest.png)
 Kiểm tra collection:
 
 ```text
@@ -251,9 +251,9 @@ Target:
 ```text
 expense-tracker-statistics
 ```
-![alt text](../../images/4-Workshop/4.11/EventBridge2.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge2.png)
 
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogEvent.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogEvent.png)
 
 Kiểm tra trạng thái Scheduler và các lần gọi Lambda.
 
@@ -277,34 +277,13 @@ Total expenses found: 16
 Users found: 2
 Statistics saved for user: ...
 ```
-![alt text](../../images/4-Workshop/4.11/CloudwatchLogStream.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogStream.png)
 ---
 
 ## 14. Kiểm tra toàn bộ hệ thống
 
-```text
-Browser
-   │
-   ▼
-Amazon EC2
-   │
-   ├── Node.js
-   └── Express
-          │
-          ▼
-     MongoDB Atlas
-          ▲
-          │
-       Lambda
-          ▲
-          │
-     EventBridge
-
-Lambda
-   │
-   ▼
-CloudWatch
-```
+![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/Workshop/images/architecture-diagram.png)
+*Hình 1 – Kiến trúc hệ thống quản lý chi tiêu
 
 ---
 
@@ -340,30 +319,5 @@ Lambda thực hiện thống kê dữ liệu và lưu kết quả vào collectio
 
 Kiến trúc cuối cùng:
 
-```text
-User
- │
- ▼
-Browser
- │
- ▼
-EC2
- │
- ├── Frontend
- └── Backend
-       │
-       ▼
- MongoDB Atlas
-       ▲
-       │
-    Lambda
-       ▲
-       │
- EventBridge
-
-Lambda
-  │
-  ▼
-CloudWatch
-```
-```
+![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/Workshop/images/architecture-diagram.png)
+*Hình 1 – Kiến trúc hệ thống quản lý chi tiêu
