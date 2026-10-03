@@ -104,6 +104,7 @@ The Dashboard displays:
 - Total Income.
 - Total Expense.
 - Transaction list.
+- AWS Lambda Statistics
 - Add transaction form.
 - Expense chart by Category.
 
@@ -160,8 +161,13 @@ The request includes the JWT Token in the Authorization Header.
 After the transaction is successfully added, the Dashboard reloads the transaction list and updated statistics.
 
 ---
+## 8. Automatic Expense Statistics
 
-## 8. Recent Transactions
+* Allows users to view the expense statistics directly.
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/Lambda_Statistics.png)
+---
+## 9. Recent Transactions
 
 ![alt text](/WorkshopAWS/images/4-Workshop/4.6/recent_trans.png)
 
@@ -169,7 +175,7 @@ The Recent Transactions section allows users to view their latest transactions d
 
 ---
 
-## 9. Logout
+## 10. Logout
 
 When the user logs out, the stored authentication information is removed:
 
@@ -185,7 +191,7 @@ After logout, the user is redirected to the Login page.
 
 ---
 
-## 10. Result
+## 11. Result
 
 The completed Frontend provides the following flow:
 

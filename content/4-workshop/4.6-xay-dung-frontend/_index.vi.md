@@ -98,6 +98,7 @@ Dashboard hiển thị:
 - Total Expense.
 - Danh sách giao dịch.
 - Form thêm giao dịch.
+- AWS Lambda Statistics
 - Biểu đồ theo Category.
 ![alt text](/WorkshopAWS/images/4-Workshop/4.6/dashbroadfull.png)
 ---
@@ -142,14 +143,18 @@ Sau khi thêm thành công, Dashboard cập nhật lại danh sách và số li�
 
 
 ---
+## 8. Tự động cập nhật thống kê chi tiêu
 
-## 8. Giao dịch gần đây
+* Cho phép người dùng xem trực tiếp bảng thống kê chi tiêu.
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/Lambda_Statistics.png)
+---
+## 9. Giao dịch gần đây
 ![alt text](/WorkshopAWS/images/4-Workshop/4.6/recent_trans.png)
 * Cho phép người dùng xem trực tiếp các giao dịch gần đây.
 
 ---
 
-## 9. Logout
+## 10. Logout
 
 Khi Logout:
 
