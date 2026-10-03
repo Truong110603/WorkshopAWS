@@ -214,7 +214,7 @@ http://<PUBLIC-IP>:3000/
 For example:
 
 ```text
-http://47.129.176.80:3000/
+http://13.251.40.65:3000/
 ```
 
 The Frontend is served by the Express Backend.

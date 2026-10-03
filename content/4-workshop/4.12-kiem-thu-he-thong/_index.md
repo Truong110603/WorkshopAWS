@@ -387,5 +387,5 @@ AWS Lambda processes expense statistics and stores the results in the `statistic
 
 The final architecture is:
 
-![Figure 1 – Expense Tracker System Architecture](/Workshop/images/architecture-diagram.png)
+![Figure 1 – Expense Tracker System Architecture](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
 *Figure 1 – Expense Tracker System Architecture*

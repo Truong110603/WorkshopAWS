@@ -173,7 +173,7 @@ pm2 restart expense-tracker
 Truy cập:
 
 ```text
-http://47.129.176.80:3000/:3000
+http://13.251.40.65:3000/
 ```
 
 Frontend được phục vụ từ Backend Express.
