@@ -37,7 +37,7 @@ Each user's data is identified using `userId`.
 
 ## 2. System Architecture
 
-![Figure 1 – Expense Tracker System Architecture](/Workshop/images/architecture-diagram.png)
+![Figure 1 – Expense Tracker System Architecture](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
 *Figure 1 – Expense Tracker System Architecture*
 
 <!-- IMAGE: Insert the Expense Tracker architecture image here if available -->
