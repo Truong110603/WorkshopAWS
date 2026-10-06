@@ -8,86 +8,85 @@ pre: " <b> 1.1. </b> "
 
 ### Week 1 Objectives:
 
-* Get familiar with the internship environment and AWS basics.
-* Learn IAM and user permission management.
-* Learn to deploy and manage Amazon EC2.
-* Understand Amazon VPC networking.
-* Learn static website hosting with Amazon S3.
-* Practice IAM Role and AWS CLI.
+* Become familiar with the internship environment and basic AWS concepts.
+* Learn about IAM and access management.
+* Learn how to deploy and manage Amazon EC2.
+* Learn about Amazon VPC and networking on AWS.
+* Learn how to deploy a static website using Amazon S3.
+* Practice using IAM Roles and AWS CLI.
 
-### Tasks to be carried out this week:
+### Tasks to be completed during Week 1:
 
- | Task | Start Date | Completion Date | Reference Material |
- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
- | - Explore the AWS architectural overview and set up a practice account.<br>- Study AWS Core Services: EC2, S3, IAM. | 03/08/2026 | 09/08/2026 | https://cloudjourney.awsstudygroup.com/ |
-### Week 1 Achievements:
+| **Day** | **Task** | **Start Date** | **Completion Date** | **References** |
+| :--- | :--- | :--- | :--- | :--- |
+| Monday | Learn about AWS architecture and create an AWS practice account. Learn the basic AWS services: IAM, EC2, and S3. | 03/08/2026 | 03/08/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
+| Tuesday | Learn IAM. Create an IAM Group and IAM User, assign policies, and practice logging in with an IAM User. | 04/08/2026 | 04/08/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
+| Wednesday | Learn Amazon EC2. Launch an EC2 instance, configure Security Groups, connect through SSH, install Apache, and deploy a simple website. | 05/08/2026 | 05/08/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
+| Thursday | Learn Amazon VPC. Create a VPC, configure Public and Private Subnets, attach an Internet Gateway, configure Route Tables, and assign a Public IPv4 address. | 06/08/2026 | 06/08/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
+| Friday | Learn Amazon S3, IAM Roles, and AWS CLI. Create an S3 Bucket, configure Bucket Policies and Static Website Hosting, create an IAM Role, configure AWS CLI, and practice uploading files to S3. | 07/08/2026 | 07/08/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
 
-* Learned AWS Cloud basics and internship workflow.
+### Week 1 Results:
 
-* Learned IAM:
-  * Create IAM Groups and Users.
-  * Assign policies.
-  * Log in with IAM users.
+* Gained a basic understanding of AWS and the internship environment.
 
-* Deployed an EC2 instance:
-  * Configure Security Groups.
-  * Connect via SSH.
-  * Install Apache.
-  * Deploy a simple website.
+* Learned about IAM:
+  * Created IAM Groups and IAM Users.
+  * Assigned IAM Policies.
+  * Practiced logging in with an IAM User.
+  * Understood access control using IAM Users, Roles, and Policies.
 
-* Learned Amazon VPC:
-  * Create a VPC.
-  * Configure Public and Private Subnets.
-  * Attach an Internet Gateway.
-  * Configure Route Tables.
-  * Assign Public IPv4.
+* Practiced deploying Amazon EC2:
+  * Configured Security Groups.
+  * Connected to EC2 using SSH.
+  * Installed Apache.
+  * Deployed a simple website.
+  * Learned about EC2 User Data.
+  * Used User Data to automatically install Apache.
+  * Deployed a website during EC2 initialization.
 
-* Hosted a static website on Amazon S3:
-  * Create an S3 Bucket.
-  * Upload website files.
-  * Configure Bucket Policy.
-  * Enable Static Website Hosting.
+* Learned about Amazon VPC:
+  * Created a VPC.
+  * Configured Public and Private Subnets.
+  * Attached an Internet Gateway.
+  * Configured Route Tables.
+  * Assigned a Public IPv4 address.
+  * Practiced connecting EC2 to a VPC and verifying Internet connectivity.
 
-* Practiced IAM Role and AWS CLI:
-  * Create an IAM Role.
-  * Attach AmazonS3ReadOnlyAccess.
-  * Use AWS CLI.
-  * List S3 Buckets.
-  * Understand AccessDenied errors.
+* Learned about Amazon S3:
+  * Created an S3 Bucket.
+  * Uploaded website files.
+  * Configured Bucket Policies.
+  * Enabled Static Website Hosting.
+  * Learned about S3 security and public access.
+  * Practiced configuring Block Public Access.
+  * Understood public access permissions.
 
-* Gained hands-on experience with IAM, EC2, VPC, S3, and AWS CLI.
-
-* Learned basic AWS security using IAM Users, Roles, and Policies.
-* * Learned Amazon S3 security:
-  * Bucket Policy.
-  * Block Public Access.
-  * Public access control.
-
-* Practiced IAM Role:
-  * Create IAM Role.
-  * Attach Role to EC2.
-  * Access Amazon S3 using AWS CLI.
-
-* Learned EC2 User Data:
-  * Launch EC2 with User Data.
-  * Install Apache automatically.
-  * Deploy a web page.
+* Practiced IAM Roles:
+  * Created an IAM Role.
+  * Assigned the `AmazonS3ReadOnlyAccess` policy.
+  * Attached an IAM Role to an EC2 instance.
+  * Accessed Amazon S3 from EC2 using AWS CLI.
 
 * Practiced AWS CLI:
-  * Configure AWS CLI.
-  * Verify IAM User.
-  * Upload files to Amazon S3.
-  * Understand IAM Deny Policy.
+  * Installed and configured AWS CLI.
+  * Verified the IAM User.
+  * Listed S3 Buckets.
+  * Uploaded files to Amazon S3.
+  * Practiced accessing S3 resources from EC2.
+  * Understood `AccessDenied` errors.
+  * Learned about IAM Deny Policies.
 
-* Learned Amazon RDS:
-  * Create MySQL database.
-  * Configure Security Group.
-  * Connect EC2 to RDS.
-  * Verify database connection.
+* Learned about Amazon RDS:
+  * Created a MySQL database.
+  * Configured Security Groups.
+  * Connected EC2 to Amazon RDS.
+  * Tested the database connection.
 
-* Deployed a web application:
-  * Install Apache and PHP.
-  * Connect PHP to Amazon RDS.
-  * Access the application through Public IP.
+* Practiced deploying a web application:
+  * Installed Apache and PHP.
+  * Connected PHP to Amazon RDS.
+  * Accessed the application through the EC2 Public IP address.
 
-* Improved hands-on experience with Amazon S3, IAM, EC2, AWS CLI and Amazon RDS.
+* Gained practical experience with Amazon S3, IAM, EC2, VPC, AWS CLI, and Amazon RDS.
+
+* Improved understanding of AWS access control, networking, compute, storage, and database services.
