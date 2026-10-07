@@ -63,7 +63,7 @@ pre: " <b> 1.1. </b> "
 
 * Practiced IAM Roles:
   * Created an IAM Role.
-  * Assigned the `AmazonS3ReadOnlyAccess` policy.
+  * Assigned the AmazonS3ReadOnlyAccess policy.
   * Attached an IAM Role to an EC2 instance.
   * Accessed Amazon S3 from EC2 using AWS CLI.
 
@@ -73,7 +73,7 @@ pre: " <b> 1.1. </b> "
   * Listed S3 Buckets.
   * Uploaded files to Amazon S3.
   * Practiced accessing S3 resources from EC2.
-  * Understood `AccessDenied` errors.
+  * Understood AccessDenied errors.
   * Learned about IAM Deny Policies.
 
 * Learned about Amazon RDS:
