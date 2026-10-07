@@ -63,7 +63,7 @@ pre: " <b> 1.1. </b> "
 
 * Thực hành IAM Role:
   * Tạo IAM Role.
-  * Gán Policy `AmazonS3ReadOnlyAccess`.
+  * Gán Policy AmazonS3ReadOnlyAccess.
   * Gắn IAM Role cho EC2.
   * Truy cập Amazon S3 từ EC2 bằng AWS CLI.
 
@@ -73,7 +73,7 @@ pre: " <b> 1.1. </b> "
   * Liệt kê các S3 Bucket.
   * Tải tệp lên Amazon S3.
   * Thực hành truy cập S3 từ EC2.
-  * Hiểu lỗi `AccessDenied`.
+  * Hiểu lỗi AccessDenied.
   * Tìm hiểu về IAM Deny Policy.
 
 * Tìm hiểu Amazon RDS:
