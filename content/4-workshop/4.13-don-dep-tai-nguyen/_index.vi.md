@@ -1,323 +1,269 @@
 ---
-title: "Kiểm thử hệ thống"
-weight: 12
-pre: " <b> 4.12 </b> "
+title: "Dọn dẹp tài nguyên"
+weight: 13
+pre: " <b> 4.13 </b> "
 ---
 
-# Kiểm thử hệ thống
+# Dọn dẹp tài nguyên
 
 ## Mục tiêu
 
-Kiểm tra các chức năng của Expense Tracker sau khi Backend được triển khai trên EC2 và các thành phần AWS đã được cấu hình.
+Xóa các tài nguyên AWS không còn sử dụng sau khi hoàn thành Workshop.
+
+Việc dọn dẹp giúp tránh duy trì các tài nguyên không cần thiết và hạn chế phát sinh chi phí.
 
 ---
 
-## 1. Kiểm tra EC2
+## 1. Dừng và xóa EC2
 
-Kết nối:
+Vào:
 
-```bash
-ssh -i ".\expense-tracker-key.pem" ubuntu@47.129.176.80
+```text
+AWS Console
+→ EC2
+→ Instances
 ```
 
-Kiểm tra PM2:
+Chọn Instance của Expense Tracker.
 
-```bash
-pm2 status
-```
-![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
-Kiểm tra log:
+Thực hiện:
 
-```bash
-pm2 logs expense-tracker
+```text
+Instance state
+→ Terminate instance
 ```
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/ubuntu_check_log.png)
+
+Sau khi Terminate, kiểm tra Instance không còn ở trạng thái Running.
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/EC2_clear.png)
 ---
 
-## 2. Health API
+## 2. Xóa Security Group
 
-```bash
-curl http://localhost:3000/api/health
+Vào:
+
+```text
+AWS Console
+→ EC2
+→ Security Groups
 ```
 
-Response:
+Chọn:
 
-```json
-{
-    "status": "ok"
-}
+```text
+expense-tracker-sg
 ```
-![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
+
+Xóa Security Group sau khi EC2 đã được Terminate.
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/SecurityGr_clear.png)
 ---
 
-## 3. Kiểm tra Register
+## 3. Xóa Public Subnet
 
-Truy cập trang Register và nhập:
-
-```text
-Name
-Email
-Password
-```
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/signup_test.png)
-Kiểm tra User trong:
+Vào:
 
 ```text
-MongoDB Atlas
-→ expensetracker
-→ users
+AWS Console
+→ VPC
+→ Subnets
 ```
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_signup_test.png)
+
+Chọn:
+
+```text
+expense-tracker-public-subnet
+```
+
+Thực hiện:
+
+```text
+Delete subnet
+```
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/Subnet_clear.png)
 ---
 
-## 4. Kiểm tra Login
+## 4. Xóa Route Table
 
-Đăng nhập bằng tài khoản đã tạo.
-
-Kiểm tra:
+Vào:
 
 ```text
-Login
-   ↓
-JWT
-   ↓
-Dashboard
+AWS Console
+→ VPC
+→ Route Tables
 ```
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/login-test.png)
+
+Chọn Route Table được tạo cho Expense Tracker.
+
+Xóa Route Table sau khi Subnet đã được xóa hoặc không còn Association.
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/Routetable_clear.png)
 ---
 
-## 5. Thêm giao dịch
+## 5. Detach và xóa Internet Gateway
 
-Thêm một giao dịch:
-
-```text
-Title: Ăn tối
-Amount: 100000
-Type: expense
-Category: Food
-Date: 2026-09-30
-```
-![alt text](/WorkshopAWS/images/4-Workshop/4.6/add_trans.png)
-Kiểm tra trong:
+Vào:
 
 ```text
-MongoDB Atlas
-→ expensetracker
-→ expenses
+AWS Console
+→ VPC
+→ Internet Gateways
 ```
 
-Document có:
+Chọn:
 
 ```text
-userId
-title
-amount
-type
-category
-date
+expense-tracker-igw
 ```
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_add_test.png)
+
+Thực hiện:
+
+```text
+Detach from VPC
+```
+
+Sau đó:
+
+```text
+Delete Internet Gateway
+```
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/internet_gate_clear.png)
 ---
 
-## 6. Kiểm tra Dashboard
+## 6. Xóa VPC
 
-Kiểm tra các thành phần:
+Vào:
 
 ```text
-Balance
-Total Income
-Total Expense
-Transactions
-Category Chart
+AWS Console
+→ VPC
+→ Your VPCs
 ```
 
-Các số liệu được lấy từ API Backend.
+Chọn:
 
+```text
+expense-tracker-vpc
+```
+
+Thực hiện:
+
+```text
+Delete VPC
+```
+
+Chỉ thực hiện bước này sau khi các tài nguyên phụ thuộc đã được xóa.
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/VPC_clear.png)
 ---
 
-## 7. Kiểm tra Update
+## 7. Xóa Lambda
 
-Chọn một giao dịch và cập nhật thông tin.
-
-Kiểm tra lại:
+Vào:
 
 ```text
-Dashboard
-API
-MongoDB Atlas
+AWS Console
+→ Lambda
+→ Functions
 ```
 
----
-
-## 8. Kiểm tra Delete
-
-Xóa một giao dịch.
-
-Kiểm tra lại danh sách giao dịch và collection:
-
-```text
-expenses
-```
-
----
-
-## 9. Kiểm tra User Data
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_user_test.png)
-Tạo hai tài khoản:
-
-
-**User A**
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user1.png)
-
-
-**User B**
-![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user2.png)
-
-Tạo giao dịch cho User A.
-
-Đăng nhập bằng User B và kiểm tra danh sách giao dịch.
-
-API chỉ trả về dữ liệu theo:
-
-```text
-userId
-```
-
-
----
-
-## 10. Kiểm tra Authentication
-
-Gọi:
-
-```text
-GET /api/expenses
-```
-
-không có token.
-
-Response:
-
-```text
-401 Unauthorized
-```
-![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithoutJWT.png)
-Gửi:
-
-```text
-Authorization: Bearer <TOKEN>
-```
-![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithJWT.png)
-API có thể truy cập.
-
----
-
-## 11. Kiểm tra Lambda
-
-Function:
+Chọn:
 
 ```text
 expense-tracker-statistics
 ```
 
-Kết quả:
-
-```json
-{
-    "statusCode": 200,
-    "body": "{\"message\":\"Thống kê chi tiêu thành công\",\"expensesFound\":16,\"usersProcessed\":2}"
-}
-```
-![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaTest.png)
-Kiểm tra collection:
+Thực hiện:
 
 ```text
-expensetracker
-→ statistics
+Actions
+→ Delete function
 ```
 
+Xác nhận xóa Function.
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/Lambda_clear.png)
 ---
 
-## 12. Kiểm tra EventBridge
+## 8. Xóa EventBridge Scheduler
 
-Scheduler:
+Vào:
+
+```text
+AWS Console
+→ EventBridge
+→ Scheduler
+```
+
+Chọn:
 
 ```text
 expense-tracker-daily-statistics
 ```
 
-Target:
+Thực hiện:
 
 ```text
-expense-tracker-statistics
+Delete
 ```
-![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge2.png)
 
-![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogEvent.png)
-
-Kiểm tra trạng thái Scheduler và các lần gọi Lambda.
-
+Xác nhận xóa Scheduler.
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/EventBridge_clear.png)
 ---
 
-## 13. Kiểm tra CloudWatch
+## 9. Xóa CloudWatch Logs
 
-Log Group:
+Vào:
+
+```text
+AWS Console
+→ CloudWatch
+→ Logs
+→ Log groups
+```
+
+Chọn:
 
 ```text
 /aws/lambda/expense-tracker-statistics
 ```
 
-Kiểm tra Log Stream sau khi Lambda được gọi.
-
-Các log chính:
+Thực hiện:
 
 ```text
-Connected to MongoDB Atlas
-Total expenses found: 16
-Users found: 2
-Statistics saved for user: ...
+Delete
 ```
-![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogStream.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/Cloudwatch_clear.png)
 ---
 
-## 14. Kiểm tra toàn bộ hệ thống
+## 10. Kiểm tra IAM
 
-![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/Workshop/images/architecture-diagram.png)
-*Hình 1 – Kiến trúc hệ thống quản lý chi tiêu
+Kiểm tra các User, Group hoặc Policy được tạo riêng cho Workshop.
 
----
+Nếu không còn sử dụng, có thể xóa các tài nguyên IAM tương ứng.
 
-## 15. Các thành phần hoàn thành
+Không xóa tài khoản hoặc quyền IAM đang được sử dụng cho các hệ thống khác.
 
-| Thành phần | Trạng thái |
-|---|---|
-| Node.js | Hoàn thành |
-| Express | Hoàn thành |
-| MongoDB Atlas | Hoàn thành |
-| Register | Hoàn thành |
-| Login | Hoàn thành |
-| JWT | Hoàn thành |
-| bcrypt | Hoàn thành |
-| Expense CRUD | Hoàn thành |
-| Dashboard | Hoàn thành |
-| Chart.js | Hoàn thành |
-| EC2 | Hoàn thành |
-| PM2 | Hoàn thành |
-| Lambda | Hoàn thành |
-| EventBridge | Hoàn thành |
-| CloudWatch | Hoàn thành |
 
 ---
 
-## 16. Kết quả
+## 12. Kiểm tra tài nguyên AWS
 
-Expense Tracker có thể chạy trên EC2 và kết nối với MongoDB Atlas để lưu trữ dữ liệu.
+Sau khi hoàn thành việc dọn dẹp, kiểm tra lại:
 
-Người dùng có thể đăng ký, đăng nhập và quản lý các giao dịch của tài khoản.
+```text
+EC2
+VPC
+Subnet
+Internet Gateway
+Security Group
+Lambda
+EventBridge Scheduler
+CloudWatch Logs
+IAM
+```
 
-Lambda thực hiện thống kê dữ liệu và lưu kết quả vào collection `statistics`. EventBridge gọi Lambda theo lịch và CloudWatch lưu log để theo dõi quá trình thực thi.
+Đảm bảo các tài nguyên không còn sử dụng đã được xử lý.
 
-Kiến trúc cuối cùng:
+---
 
-![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
-*Hình 1 – Kiến trúc hệ thống quản lý chi tiêu
+## 13. Kết quả
+
+Các tài nguyên AWS được tạo trong Workshop đã được kiểm tra và dọn dẹp sau khi hoàn thành.
+
+Các tài nguyên cần giữ lại cho mục đích phát triển có thể được giữ nguyên, đặc biệt là MongoDB Atlas Database nếu ứng dụng tiếp tục được sử dụng.
