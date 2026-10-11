@@ -1,7 +1,7 @@
 ---
 title: "Resource Cleanup"
 weight: 13
-pre: " \<b> 4.13 \</b> "
+pre: " <b> 4.13 </b> "
 ---
 
 # Resource Cleanup
