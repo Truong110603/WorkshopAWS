@@ -204,6 +204,7 @@ Delete
 
 Xác nhận xóa Scheduler.
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/EventBridge_clear.png)
+![alt text](/WorkshopAWS/images/4-Workshop/4.13/Alarms_clear.png)
 ---
 
 ## 9. Xóa CloudWatch Logs
