@@ -1,307 +1,391 @@
 ---
-title: "Cleaning Up Resources"
-weight: 13
-pre: " <b> 4.13 </b> "
+title: "System Testing"
+weight: 12
+pre: " <b> 4.12 </b> "
 ---
 
-# Cleaning Up Resources
+# System Testing
 
 ## Objectives
 
-Delete AWS resources that are no longer used after completing the Workshop.
-
-Cleaning up unused resources helps avoid maintaining unnecessary resources and reduces the possibility of additional costs.
+Test the Expense Tracker functionalities after deploying the Backend to EC2 and configuring the required AWS components.
 
 ---
 
-## 1. Stop and Terminate EC2
+## 1. Check EC2
 
-Go to:
+Connect to the EC2 instance:
 
-```text
-AWS Console
-
-→ EC2
-
-→ Instances
+```bash
+ssh -i ".\expense-tracker-key.pem" ubuntu@<PUBLIC-IP>
 ```
 
-Select the Expense Tracker instance.
+Check the PM2 status:
 
-Perform:
-
-```text
-Instance state
-
-→ Terminate instance
+```bash
+pm2 status
 ```
 
-After termination, check that the instance is no longer in the `Running` state.
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
+
+Check the application logs:
+
+```bash
+pm2 logs expense-tracker
+```
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/ubuntu_check_log.png)
 
 ---
 
-## 2. Delete the Security Group
+## 2. Health API
 
-Go to:
+Run:
 
-```text
-AWS Console
-
-→ EC2
-
-→ Security Groups
+```bash
+curl http://localhost:3000/api/health
 ```
 
-Select:
+Response:
 
-```text
-expense-tracker-sg
+```json
+{
+    "status": "ok"
+}
 ```
 
-Delete the Security Group after the EC2 instance has been terminated.
+![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
+
+The Health API confirms that the Node.js Backend is running correctly on EC2.
 
 ---
 
-## 3. Delete the Public Subnet
+## 3. Test Register
 
-Go to:
-
-```text
-AWS Console
-
-→ VPC
-
-→ Subnets
-```
-
-Select:
+Access the Register page and enter:
 
 ```text
-expense-tracker-public-subnet
+Name
+
+Email
+
+Password
 ```
 
-Perform:
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/signup_test.png)
+
+Check the created User in:
 
 ```text
-Delete subnet
+MongoDB Atlas
+→ expensetracker
+→ users
 ```
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_signup_test.png)
+
+The User information is stored in the `users` collection.
 
 ---
 
-## 4. Delete the Route Table
+## 4. Test Login
 
-Go to:
+Log in using the created account.
+
+The authentication flow is:
 
 ```text
-AWS Console
-
-→ VPC
-
-→ Route Tables
+Login
+   ↓
+JWT
+   ↓
+Dashboard
 ```
 
-Select the Route Table created for Expense Tracker.
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/login-test.png)
 
-Delete the Route Table after the Subnet has been deleted or after it no longer has any associations.
+After successful authentication, the user is redirected to the Dashboard.
 
 ---
 
-## 5. Detach and Delete the Internet Gateway
+## 5. Add a Transaction
 
-Go to:
-
-```text
-AWS Console
-
-→ VPC
-
-→ Internet Gateways
-```
-
-Select:
+Add a transaction:
 
 ```text
-expense-tracker-igw
+Title: Dinner
+
+Amount: 100000
+
+Type: expense
+
+Category: Food
+
+Date: 2026-09-30
 ```
 
-Perform:
+![alt text](/WorkshopAWS/images/4-Workshop/4.6/add_trans.png)
+
+Check the transaction in:
 
 ```text
-Detach from VPC
+MongoDB Atlas
+→ expensetracker
+→ expenses
 ```
 
-Then:
+The document contains:
 
 ```text
-Delete Internet Gateway
+userId
+
+title
+
+amount
+
+type
+
+category
+
+date
 ```
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_add_test.png)
 
 ---
 
-## 6. Delete the VPC
+## 6. Check the Dashboard
 
-Go to:
-
-```text
-AWS Console
-
-→ VPC
-
-→ Your VPCs
-```
-
-Select:
+Check the following Dashboard components:
 
 ```text
-expense-tracker-vpc
+Balance
+
+Total Income
+
+Total Expense
+
+Transactions
+
+Category Chart
 ```
 
-Perform:
-
-```text
-Delete VPC
-```
-
-Only perform this step after all dependent resources have been deleted.
+The displayed statistics are retrieved from the Backend APIs.
 
 ---
 
-## 7. Delete the Lambda Function
+## 7. Test Update
 
-Go to:
+Select a transaction and update its information.
+
+Verify the updated data in:
 
 ```text
-AWS Console
+Dashboard
 
-→ Lambda
+API
 
-→ Functions
+MongoDB Atlas
 ```
 
-Select:
+The updated information should be reflected in the transaction document.
+
+---
+
+## 8. Test Delete
+
+Delete a transaction.
+
+Check the transaction list and the following MongoDB collection:
+
+```text
+expenses
+```
+
+The deleted transaction should no longer appear in the user's transaction list.
+
+---
+
+## 9. Test User Data Isolation
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_user_test.png)
+
+Create two user accounts:
+
+### User A
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user1.png)
+
+### User B
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.12/test_user2.png)
+
+Create a transaction for User A.
+
+Then log in using User B and check the transaction list.
+
+The API returns data based on:
+
+```text
+userId
+```
+
+Therefore, User B only receives transactions associated with User B.
+
+---
+
+## 10. Test Authentication
+
+Call:
+
+```text
+GET /api/expenses
+```
+
+without a Token.
+
+Response:
+
+```text
+401 Unauthorized
+```
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithoutJWT.png)
+
+Then send:
+
+```text
+Authorization: Bearer <TOKEN>
+```
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.7/callapiWithJWT.png)
+
+The API can be accessed after successful authentication.
+
+---
+
+## 11. Test Lambda
+
+Lambda Function:
 
 ```text
 expense-tracker-statistics
 ```
 
-Perform:
+Test result:
 
-```text
-Actions
-
-→ Delete function
+```json
+{
+    "statusCode": 200,
+    "body": "{\"message\":\"Thống kê chi tiêu thành công\",\"expensesFound\":16,\"usersProcessed\":2}"
+}
 ```
 
-Confirm the deletion of the Function.
+![alt text](/WorkshopAWS/images/4-Workshop/4.10/lambdaTest.png)
+
+Check the generated statistics in:
+
+```text
+expensetracker
+→ statistics
+```
+
+The `statistics` collection contains the results generated by the Lambda function.
 
 ---
 
-## 8. Delete the EventBridge Scheduler
+## 12. Test EventBridge
 
-Go to:
-
-```text
-AWS Console
-
-→ EventBridge
-
-→ Scheduler
-```
-
-Select:
+Scheduler:
 
 ```text
 expense-tracker-daily-statistics
 ```
 
-Perform:
+Target:
 
 ```text
-Delete
+expense-tracker-statistics
 ```
 
-Confirm the deletion of the Scheduler.
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/EventBridge2.png)
+
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogEvent.png)
+
+Check the Scheduler status and the Lambda invocations.
+
+The Scheduler automatically invokes the Lambda function according to the configured schedule.
 
 ---
 
-## 9. Delete CloudWatch Logs
+## 13. Check CloudWatch
 
-Go to:
-
-```text
-AWS Console
-
-→ CloudWatch
-
-→ Logs
-
-→ Log groups
-```
-
-Select:
+Log Group:
 
 ```text
 /aws/lambda/expense-tracker-statistics
 ```
 
-Perform:
+Check the Log Stream after the Lambda function is invoked.
+
+Main log entries include:
 
 ```text
-Delete
+Connected to MongoDB Atlas
+
+Total expenses found: 16
+
+Users found: 2
+
+Statistics saved for user: ...
 ```
 
----
+![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogStream.png)
 
-## 10. Check IAM
-
-Check the Users, Groups, or Policies created specifically for the Workshop.
-
-If they are no longer required, the corresponding IAM resources can be deleted.
-
-Do not delete IAM accounts or permissions that are currently being used by other systems.
+These logs confirm the Lambda execution and the statistics processing process.
 
 ---
 
-## 11. Check MongoDB Atlas
+## 14. Check the Complete System
 
-MongoDB Atlas is outside the AWS environment.
+The complete system can be represented as:
 
-If the Expense Tracker is no longer being used, the database or cluster can be removed according to the MongoDB Atlas configuration.
-
-If the application will continue to be developed or used, the MongoDB Atlas database can be kept.
-
----
-
-## 12. Check AWS Resources
-
-After completing the cleanup, check the following resources:
-
-```text
-EC2
-
-VPC
-
-Subnet
-
-Internet Gateway
-
-Security Group
-
-Lambda
-
-EventBridge Scheduler
-
-CloudWatch Logs
-
-IAM
-```
-
-Make sure that unused resources have been properly deleted or otherwise handled.
+![Figure 1 – Expense Tracker System Architecture](/Workshop/images/architecture-diagram.png)
+*Figure 1 – Expense Tracker System Architecture*
 
 ---
 
-## 13. Result
+## 15. Completed Components
 
-The AWS resources created for the Workshop have been reviewed and cleaned up after completion.
+| Component | Status |
+|---|---|
+| Node.js | Completed |
+| Express | Completed |
+| MongoDB Atlas | Completed |
+| Register | Completed |
+| Login | Completed |
+| JWT | Completed |
+| bcrypt | Completed |
+| Expense CRUD | Completed |
+| Dashboard | Completed |
+| Chart.js | Completed |
+| EC2 | Completed |
+| PM2 | Completed |
+| Lambda | Completed |
+| EventBridge | Completed |
+| CloudWatch | Completed |
 
-Resources that are still required for development can be kept, especially the MongoDB Atlas database if the application will continue to be used.
+---
+
+## 16. Result
+
+The Expense Tracker runs on EC2 and connects to MongoDB Atlas for data storage.
+
+Users can register, log in, and manage transactions associated with their accounts.
+
+AWS Lambda processes expense statistics and stores the results in the `statistics` collection. EventBridge invokes Lambda according to the configured schedule, while CloudWatch stores execution logs for monitoring.
+
+The final architecture is:
+
+![Figure 1 – Expense Tracker System Architecture](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
+*Figure 1 – Expense Tracker System Architecture*
