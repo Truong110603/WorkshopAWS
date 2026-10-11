@@ -32,9 +32,10 @@ Thực hiện:
 Instance state
 → Terminate instance
 ```
-
 Sau khi Terminate, kiểm tra Instance không còn ở trạng thái Running.
+
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/EC2_clear.png)
+
 ---
 
 ## 2. Xóa Security Group
@@ -54,7 +55,9 @@ expense-tracker-sg
 ```
 
 Xóa Security Group sau khi EC2 đã được Terminate.
+
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/SecurityGr_clear.png)
+
 ---
 
 ## 3. Xóa Public Subnet
@@ -79,6 +82,7 @@ Thực hiện:
 Delete subnet
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/Subnet_clear.png)
+
 ---
 
 ## 4. Xóa Route Table
@@ -94,7 +98,9 @@ AWS Console
 Chọn Route Table được tạo cho Expense Tracker.
 
 Xóa Route Table sau khi Subnet đã được xóa hoặc không còn Association.
+
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/Routetable_clear.png)
+
 ---
 
 ## 5. Detach và xóa Internet Gateway
@@ -125,6 +131,7 @@ Sau đó:
 Delete Internet Gateway
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/internet_gate_clear.png)
+
 ---
 
 ## 6. Xóa VPC
@@ -150,7 +157,9 @@ Delete VPC
 ```
 
 Chỉ thực hiện bước này sau khi các tài nguyên phụ thuộc đã được xóa.
+
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/VPC_clear.png)
+
 ---
 
 ## 7. Xóa Lambda
@@ -177,7 +186,9 @@ Actions
 ```
 
 Xác nhận xóa Function.
+
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/Lambda_clear.png)
+
 ---
 
 ## 8. Xóa EventBridge Scheduler
@@ -203,8 +214,11 @@ Delete
 ```
 
 Xác nhận xóa Scheduler.
+
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/EventBridge_clear.png)
+
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/Alarms_clear.png)
+
 ---
 
 ## 9. Xóa CloudWatch Logs
@@ -230,6 +244,7 @@ Thực hiện:
 Delete
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.13/Cloudwatch_clear.png)
+
 ---
 
 ## 10. Kiểm tra IAM
