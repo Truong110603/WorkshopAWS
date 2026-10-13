@@ -9,7 +9,7 @@ pre: " <b> 2. </b> "
 ## 1. Thông tin chung (General Information)
 
 * **Tên đề tài (Project Title):** Xây dựng và triển khai ứng dụng quản lý chi tiêu cá nhân trên nền tảng AWS.
-* **Thành viên thực hiện (Author):** Nguyễn Hồng Quân
+* **Thành viên thực hiện (Author):** Nguyễn Xuân Trường
 * **Bối cảnh (Context):** Trong cuộc sống hiện đại, việc theo dõi và quản lý thu nhập, chi tiêu cá nhân đóng vai trò quan trọng trong việc lập kế hoạch tài chính. Tuy nhiên, việc ghi chép thủ công khiến người dùng khó tổng hợp dữ liệu và đánh giá thói quen chi tiêu. Đề tài xây dựng ứng dụng Expense Tracker sử dụng Node.js, Express.js và MongoDB Atlas, triển khai backend trên Amazon EC2, đồng thời sử dụng AWS Lambda, Amazon EventBridge và Amazon CloudWatch để tự động hóa tác vụ thống kê và giám sát hệ thống.
 
 ## 2. Bài toán và Mục tiêu (Problem Statement & Objectives)
