@@ -43,8 +43,8 @@ pre: " <b> 2. </b> "
 
 ### Sơ đồ kiến trúc (Architecture Diagram)
 
-![Sơ đồ kiến trúc ứng dụng Expense Tracker trên AWS](/Workshop/images/expense-tracker-architecture.png)
-
+![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
+*Hình 1 – Kiến trúc hệ thống quản lý chi tiêu
 ### 3.1. Các dịch vụ AWS và công nghệ sử dụng (AWS Services & Technology Selection)
 
 * **Amazon EC2:** Cung cấp máy chủ ảo chạy Ubuntu để triển khai ứng dụng Expense Tracker. Backend Node.js/Express.js và các tệp frontend được phục vụ từ máy chủ này.
