@@ -1,118 +1,118 @@
 ---
-title: "Đề xuất "
+title: "Đề xuất"
 weight: 2
 pre: " <b> 2. </b> "
 ---
 
-# ỨNG DỤNG QUẢN LÝ CHI TIÊU CÁ NHÂN (EXPENSE TRACKER APPLICATION)
+# XÂY DỰNG VÀ TRIỂN KHAI ỨNG DỤNG QUẢN LÝ CHI TIÊU CÁ NHÂN TRÊN AWS (EXPENSE TRACKER APPLICATION)
 
 ## 1. Thông tin chung (General Information)
 
-* **Tên đề tài (Project Title):** Xây dựng ứng dụng quản lý chi tiêu cá nhân trên nền tảng Web (Personal Expense Tracker Web Application).
-* **Thành viên thực hiện (Author):** Nguyễn Xuân Trường
-* **Bối cảnh (Context):** Trong cuộc sống hiện đại, việc quản lý tài chính cá nhân ngày càng trở nên quan trọng. Tuy nhiên, nhiều người vẫn gặp khó khăn trong việc theo dõi các khoản thu nhập, chi tiêu hằng ngày do thiếu một công cụ quản lý tập trung và trực quan.
-* Đề tài này xây dựng một hệ thống quản lý chi tiêu cá nhân giúp người dùng ghi nhận các giao dịch tài chính, phân loại khoản chi, theo dõi ngân sách và phân tích thói quen sử dụng tiền thông qua các biểu đồ thống kê trực quan.
+* **Tên đề tài (Project Title):** Xây dựng và triển khai ứng dụng quản lý chi tiêu cá nhân trên nền tảng AWS.
+* **Thành viên thực hiện (Author):** Nguyễn Hồng Quân
+* **Bối cảnh (Context):** Trong cuộc sống hiện đại, việc theo dõi và quản lý thu nhập, chi tiêu cá nhân đóng vai trò quan trọng trong việc lập kế hoạch tài chính. Tuy nhiên, việc ghi chép thủ công khiến người dùng khó tổng hợp dữ liệu và đánh giá thói quen chi tiêu. Đề tài xây dựng ứng dụng Expense Tracker sử dụng Node.js, Express.js và MongoDB Atlas, triển khai backend trên Amazon EC2, đồng thời sử dụng AWS Lambda, Amazon EventBridge và Amazon CloudWatch để tự động hóa tác vụ thống kê và giám sát hệ thống.
 
 ## 2. Bài toán và Mục tiêu (Problem Statement & Objectives)
 
 ### 2.1. Bối cảnh và Bài toán (Context & Problem)
-* **Hệ thống dùng để làm gì?** Hệ thống Expense Tracker được xây dựng nhằm hỗ trợ người dùng quản lý toàn bộ hoạt động tài chính cá nhân.
-* Người dùng có thể:
-<br>-Thêm các khoản thu nhập.
-<br>-Ghi nhận các khoản chi tiêu.
-<br>-Phân loại giao dịch theo nhóm.
-<br>-Theo dõi lịch sử sử dụng tiền.
-<br>-Xem báo cáo thống kê tài chính theo thời gian.
 
-Hệ thống lưu trữ dữ liệu tập trung trên cơ sở dữ liệu đám mây, cho phép truy cập nhanh chóng và bảo mật thông tin cá nhân.
-* **Đối tượng sử dụng (Target Users):** -Sinh viên muốn kiểm soát chi phí sinh hoạt.
-<br>-Nhân viên văn phòng muốn quản lý thu nhập và chi tiêu hàng tháng.
-<br>-Người dùng cá nhân có nhu cầu lập kế hoạch tài chính.
-* **Vấn đề giải quyết (Problem Solved):** Khắc phục các hạn chế của phương pháp quản lý truyền thống như:
-
-<br>-Ghi chép thủ công bằng giấy dễ thất lạc.
-<br>-Sử dụng Excel khó theo dõi trên nhiều thiết bị.
-<br>-Không có biểu đồ phân tích trực quan.
-<br>-Không có cảnh báo khi vượt quá ngân sách.
-
-<br>Hệ thống cung cấp một giải pháp số hóa giúp người dùng kiểm soát tài chính hiệu quả hơn.
+* **Hệ thống dùng để làm gì?** Hệ thống cung cấp nền tảng quản lý tài chính cá nhân, cho phép người dùng đăng ký, đăng nhập, thêm, xem, sửa và xóa các giao dịch thu chi. Ứng dụng tổng hợp dữ liệu để hiển thị tổng thu nhập, tổng chi tiêu, số dư và biểu đồ chi tiêu theo danh mục. Ngoài ra, hệ thống sử dụng AWS Lambda để thực hiện thống kê chi tiêu tự động theo lịch được cấu hình bằng Amazon EventBridge, đồng thời ghi lại nhật ký hoạt động trên Amazon CloudWatch.
+* **Đối tượng sử dụng (Target Users):** Cá nhân, sinh viên và người đi làm có nhu cầu theo dõi thu nhập, quản lý chi tiêu và lập kế hoạch tài chính cá nhân.
+* **Vấn đề giải quyết (Problem Solved):** Giảm sự phụ thuộc vào ghi chép thủ công, hỗ trợ tổng hợp dữ liệu tài chính nhanh chóng, cung cấp giao diện trực quan để theo dõi tình hình thu chi và triển khai ứng dụng trên môi trường đám mây có khả năng truy cập qua Internet.
 
 ### 2.2. Mục tiêu cụ thể (Specific Objectives)
+
 * **Output mong muốn:**
-  * Hệ thống đăng ký và đăng nhập người dùng.
-  * Module quản lý thu nhập và chi tiêu.
-  * Hệ thống phân loại giao dịch theo danh mục.
-  * Dashboard thống kê tài chính trực quan.
-  * Biểu đồ phân tích xu hướng chi tiêu.
-  * Cơ sở dữ liệu lưu trữ thông tin người dùng và giao dịch.
-  * API Backend phục vụ giao tiếp giữa giao diện và cơ sở dữ liệu.
+  * Xây dựng hệ thống đăng ký và đăng nhập người dùng sử dụng JWT để xác thực và bcrypt để băm mật khẩu.
+  * Phát triển backend bằng Node.js và Express.js để cung cấp API quản lý giao dịch thu chi.
+  * Xây dựng giao diện web bằng HTML, CSS và JavaScript, kết hợp Chart.js để hiển thị dữ liệu tài chính trực quan.
+  * Sử dụng MongoDB Atlas để lưu trữ thông tin người dùng và giao dịch.
+  * Triển khai ứng dụng backend và frontend trên Amazon EC2 chạy Ubuntu, sử dụng PM2 để quản lý tiến trình Node.js.
+  * Xây dựng hàm AWS Lambda thực hiện thống kê dữ liệu chi tiêu và sử dụng Amazon EventBridge Scheduler để kích hoạt tác vụ định kỳ.
+  * Sử dụng Amazon CloudWatch Logs để theo dõi nhật ký thực thi Lambda và hỗ trợ kiểm tra lỗi.
+
 * **Tiêu chí đánh giá thành công (Success Criteria):**
-  * Người dùng có thể tạo tài khoản và đăng nhập thành công.
-  * Các giao dịch được lưu trữ chính xác vào cơ sở dữ liệu.
-  * Dashboard hiển thị đúng tổng thu nhập, tổng chi tiêu và số dư.
-  * Biểu đồ thống kê phản ánh chính xác dữ liệu thực tế.
-  * Dữ liệu cá nhân được phân quyền bảo mật, mỗi người dùng chỉ truy cập được dữ liệu của chính mình.
+  * Người dùng có thể đăng nhập và thực hiện các thao tác quản lý giao dịch theo chức năng đã xây dựng.
+  * Dữ liệu giao dịch được lưu trữ trên MongoDB Atlas và được truy xuất theo tài khoản người dùng đã xác thực.
+  * Dashboard hiển thị được tổng thu nhập, tổng chi tiêu, số dư và biểu đồ phân tích chi tiêu.
+  * Ứng dụng có thể truy cập thông qua địa chỉ công khai của máy chủ EC2 khi máy chủ và cấu hình mạng hoạt động bình thường.
+  * Hàm Lambda thực thi thành công tác vụ thống kê và ghi nhận kết quả xử lý.
+  * Nhật ký thực thi được ghi lại trên CloudWatch để phục vụ việc theo dõi và xử lý sự cố.
+
 ## 3. Kiến trúc và Thiết kế Kỹ thuật (Architecture & Technical Design)
 
-## Sơ đồ kiến trúc (Architecture Diagram)
-![Sơ đồ kiến trúc Hệ thống Tự động xử lý hình ảnh Serverless](/WorkshopAWS/images/sodo.jpg)
+### Sơ đồ kiến trúc (Architecture Diagram)
 
-### 3.1. Các dịch vụ AWS sử dụng (AWS Services Selection)
-* **ReactJS + TypeScript (Frontend):** Sử dụng để xây dựng giao diện người dùng hiện đại, có khả năng tương tác cao.
-<br>Các chức năng chính:
-  <br>-Hiển thị dashboard.
-  <br>-Quản lý giao dịch.
-  <br>-Hiển thị biểu đồ thống kê.
-  <br>-Tương tác với REST API.
-* **Node.js + Express.js (Backend):**
-  <br>Được lựa chọn để xây dựng hệ thống API xử lý nghiệp vụ.
-  <br>Backend chịu trách nhiệm:
-   <br>-Xác thực người dùng.
-   <br>-Kiểm tra dữ liệu đầu vào.
-   <br>-Xử lý logic giao dịch.
-   <br>-Kết nối với cơ sở dữ liệu.
-* **MongoDB Atlas (Database):**
-<br>Sử dụng cơ sở dữ liệu NoSQL MongoDB để lưu trữ:
-<br>-Thông tin tài khoản.
-<br>-Danh sách giao dịch.
-<br>-Danh mục chi tiêu.
-<br>-Dữ liệu thống kê.
-<br>MongoDB phù hợp với hệ thống có dữ liệu thay đổi linh hoạt và dễ dàng mở rộng.
-* **AWS Lambda:** Dịch vụ tính toán Serverless. Được lựa chọn vì không cần quản trị hệ thống phần cứng, chỉ tính phí theo số lượng request thực tế và tự động co giãn theo tải.
-* **Amazon DynamoDB:** Cơ sở dữ liệu NoSQL hiệu năng cao, quản lý toàn bộ dữ liệu cấu trúc nhẹ của tệp hình ảnh.
-* **Amazon CloudWatch:** Giám sát, thu thập log và đo lường hiệu suất hoạt động của hàm Lambda.
+![Sơ đồ kiến trúc ứng dụng Expense Tracker trên AWS](/Workshop/images/expense-tracker-architecture.png)
 
-### 3.2. Bảo mật và Nguyên tắc Least Privilege (Security & IAM)
-* Hệ thống cấu hình IAM Role riêng biệt cho AWS Lambda.
-* Tuân thủ tuyệt đối nguyên tắc Least Privilege (Quyền tối thiểu): Hàm Lambda chỉ có quyền GetObject trên kho gốc, PutObject trên kho đích, quyền ghi log vào CloudWatch và quyền ghi dữ liệu vào bảng DynamoDB định sẵn. Không sử dụng quyền quản trị toàn cục (AdministratorAccess).
+### 3.1. Các dịch vụ AWS và công nghệ sử dụng (AWS Services & Technology Selection)
+
+* **Amazon EC2:** Cung cấp máy chủ ảo chạy Ubuntu để triển khai ứng dụng Expense Tracker. Backend Node.js/Express.js và các tệp frontend được phục vụ từ máy chủ này.
+* **Amazon VPC:** Cung cấp môi trường mạng riêng cho các tài nguyên AWS. EC2 được đặt trong subnet phù hợp để có thể giao tiếp qua Internet theo cấu hình mạng.
+* **Public Subnet:** Chứa máy chủ EC2 có cấu hình địa chỉ IP công khai, cho phép người dùng truy cập ứng dụng theo các quy tắc định tuyến và bảo mật đã thiết lập.
+* **Internet Gateway:** Cho phép VPC giao tiếp với Internet khi kết hợp với route table và cấu hình mạng phù hợp.
+* **Route Table:** Xác định đường đi của lưu lượng mạng, bao gồm tuyến mặc định ra Internet thông qua Internet Gateway.
+* **Security Group:** Kiểm soát lưu lượng vào và ra của EC2. Các cổng được mở theo nhu cầu triển khai, chẳng hạn SSH để quản trị máy chủ và cổng ứng dụng để truy cập web.
+* **Node.js và Express.js:** Xây dựng backend, xử lý yêu cầu HTTP, xác thực người dùng và cung cấp API cho các chức năng quản lý chi tiêu.
+* **PM2:** Quản lý tiến trình Node.js trên EC2, hỗ trợ theo dõi trạng thái, xem nhật ký và khởi động lại ứng dụng khi cần thiết.
+* **MongoDB Atlas:** Cơ sở dữ liệu đám mây lưu trữ thông tin tài khoản, giao dịch và dữ liệu thống kê của ứng dụng. MongoDB Atlas là dịch vụ cơ sở dữ liệu bên ngoài AWS.
+* **AWS Lambda:** Thực thi tác vụ thống kê chi tiêu mà không cần duy trì một máy chủ riêng cho tác vụ này.
+* **Amazon EventBridge Scheduler:** Kích hoạt hàm Lambda theo lịch định kỳ đã cấu hình, giúp tự động hóa quá trình thống kê.
+* **Amazon CloudWatch:** Thu thập nhật ký thực thi của Lambda, hỗ trợ theo dõi kết quả và phát hiện lỗi trong quá trình xử lý.
+* **HTML, CSS, JavaScript và Chart.js:** Xây dựng giao diện người dùng và biểu đồ tổng hợp dữ liệu thu chi.
+
+### 3.2. Bảo mật và Quản lý quyền truy cập (Security & Access Management)
+
+* **Xác thực người dùng:** Sử dụng JWT để xác thực các yêu cầu API và bcrypt để băm mật khẩu trước khi lưu trữ.
+* **Bảo vệ dữ liệu giao dịch:** Backend xác định người dùng từ thông tin xác thực và giới hạn truy vấn giao dịch theo tài khoản tương ứng.
+* **Quản lý quyền AWS:** Sử dụng IAM Role và chính sách quyền phù hợp khi cần cấp quyền cho các dịch vụ AWS, tuân thủ nguyên tắc Least Privilege.
+* **Bảo mật mạng EC2:** Cấu hình Security Group chỉ cho phép các cổng cần thiết. Nên giới hạn quyền SSH theo địa chỉ IP quản trị và không mở rộng quyền truy cập không cần thiết.
+* **Bảo vệ thông tin kết nối:** Lưu thông tin kết nối MongoDB Atlas và các biến cấu hình nhạy cảm trong môi trường cấu hình phù hợp, không đưa mật khẩu hoặc JWT Secret vào mã nguồn công khai.
+* **Giám sát hệ thống:** Sử dụng CloudWatch Logs để theo dõi hoạt động của Lambda và hỗ trợ kiểm tra lỗi. Nhật ký không nên chứa mật khẩu, token hoặc thông tin nhạy cảm của người dùng.
 
 ## 4. Rủi ro Tiềm ẩn và Hướng giải quyết (Potential Risks & Mitigation)
 
-* **Rủi ro 1: Mất dữ liệu giao dịch (Data Loss)**
-  * *Mô tả:* Dữ liệu chi tiêu của người dùng có thể bị mất do lỗi database hoặc thao tác sai.
-  * *Hướng giải quyết:*
-    <br>-Sử dụng MongoDB Atlas có cơ chế backup.
-    <br>-Kiểm tra dữ liệu trước khi lưu.
-    <br>-Xây dựng chức năng xác nhận trước khi xóa.
-* **Rủi ro 2: Lỗi phân quyền bảo mật (IAM Permission Denied)**
-  * *Mô tả:* Hàm Lambda không có quyền đọc/ghi bucket hoặc không thể kết nối vào bảng DynamoDB do cấu hình IAM Role sai.
-  * *Hướng giải quyết:* Kiểm tra kỹ cấu hình ARN của tài nguyên trong IAM Policy, đồng thời sử dụng Amazon CloudWatch Logs để truy vết mã lỗi chính xác ngay khi gặp sự cố thực thi.
-* **Rủi ro 3: Phát sinh chi phí ngoài ý muốn (Cost Overruns)**
-  * *Mô tả:* Quên dọn dẹp các tài nguyên sau khi thử nghiệm làm phát sinh chi phí vượt định mức Free Tier.
-  * *Hướng giải quyết:* Xây dựng sẵn quy trình dọn dẹp tài nguyên (Clean-up steps) sau khi hoàn tất lab và kiểm tra định kỳ trên bảng điều khiển AWS Billing.
+* **Rủi ro 1: Máy chủ EC2 không hoạt động hoặc ứng dụng bị dừng**
+  * *Hướng giải quyết:* Sử dụng PM2 để quản lý tiến trình Node.js, kiểm tra trạng thái ứng dụng và nhật ký lỗi. Cấu hình PM2 khởi động cùng hệ thống để hỗ trợ phục hồi sau khi EC2 khởi động lại.
+
+* **Rủi ro 2: Không thể kết nối đến MongoDB Atlas**
+  * *Hướng giải quyết:* Kiểm tra chuỗi kết nối trong biến môi trường, thông tin xác thực database, cấu hình Network Access của Atlas và khả năng kết nối mạng từ EC2. Chỉ cho phép các địa chỉ IP cần thiết truy cập cơ sở dữ liệu.
+
+* **Rủi ro 3: Người dùng truy cập hoặc sửa dữ liệu của tài khoản khác**
+  * *Hướng giải quyết:* Xác minh JWT ở backend và sử dụng định danh người dùng đã xác thực trong các truy vấn dữ liệu. Không tin tưởng `userId` do client tự gửi nếu chưa được kiểm tra.
+
+* **Rủi ro 4: Hàm Lambda thực thi thất bại hoặc thống kê sai**
+  * *Hướng giải quyết:* Kiểm tra logic thống kê, quyền truy cập MongoDB Atlas, biến môi trường và nhật ký trên CloudWatch. Kiểm thử hàm với các trường hợp có dữ liệu, không có dữ liệu và xảy ra lỗi kết nối.
+
+* **Rủi ro 5: Tác vụ thống kê chạy nhiều lần hoặc ghi dữ liệu trùng lặp**
+  * *Hướng giải quyết:* Thiết kế thao tác ghi thống kê có khả năng xử lý việc chạy lặp lại an toàn, xác định rõ kỳ thống kê và sử dụng khóa định danh phù hợp để tránh tạo bản ghi trùng.
+
+* **Rủi ro 6: Truy cập ứng dụng qua HTTP hoặc cấu hình cổng chưa an toàn**
+  * *Hướng giải quyết:* Cấu hình Security Group theo nguyên tắc tối thiểu. Khi triển khai cho người dùng thực tế, cân nhắc thiết lập HTTPS và hạn chế truy cập trực tiếp đến cổng backend.
 
 ## 5. Kế hoạch Triển khai Lab (Implementation Lab Steps)
 
-Dự án được triển khai qua các bước chuẩn hóa end-to-end:
-* **Bước 1:** Khởi tạo 2 Amazon S3 Bucket (Input và Output).
-* **Bước 2:** Tạo bảng Amazon DynamoDB để lưu vết metadata hình ảnh.
-* **Bước 3:** Thiết lập IAM Policy và IAM Role tuân thủ nguyên tắc Least Privilege.
-* **Bước 4:** Xây dựng hàm AWS Lambda (Python) xử lý logic sao chép và ghi dữ liệu.
-* **Bước 5:** Cấu hình S3 Event Trigger để kích hoạt tự động hàm Lambda khi có tệp mới.
-* **Bước 6:** Kiểm thử (Test), xác thực kết quả trên DynamoDB và kiểm tra CloudWatch Logs.
-* **Bước 7:** Thực hiện dọn dẹp tài nguyên (Clean-up) để tối ưu chi phí.
+Dự án được triển khai theo các bước:
 
-## 6. Đóng góp Cá nhân và Sáng tạo (Personal Contributions & Customization)
+* **Bước 1:** Chuẩn bị môi trường phát triển, cài đặt Node.js, npm và các công cụ cần thiết.
+* **Bước 2:** Xây dựng backend bằng Node.js và Express.js, cấu hình kết nối MongoDB Atlas.
+* **Bước 3:** Xây dựng chức năng đăng ký, đăng nhập, xác thực JWT và băm mật khẩu bằng bcrypt.
+* **Bước 4:** Phát triển API quản lý giao dịch thu chi, bao gồm thêm, xem, sửa, xóa và tổng hợp dữ liệu thống kê.
+* **Bước 5:** Xây dựng giao diện frontend bằng HTML, CSS và JavaScript; sử dụng Chart.js để trực quan hóa dữ liệu tài chính.
+* **Bước 6:** Kiểm thử các API và chức năng chính tại môi trường local trước khi triển khai lên AWS.
+* **Bước 7:** Tạo và cấu hình VPC, public subnet, Internet Gateway, route table và Security Group cho máy chủ EC2.
+* **Bước 8:** Khởi tạo EC2 chạy Ubuntu, cài đặt Node.js và các thư viện cần thiết, triển khai ứng dụng và sử dụng PM2 để quản lý backend.
+* **Bước 9:** Kiểm tra kết nối từ EC2 đến MongoDB Atlas và xác minh các chức năng đăng nhập, quản lý giao dịch và dashboard trên môi trường AWS.
+* **Bước 10:** Xây dựng hàm AWS Lambda thực hiện thống kê dữ liệu chi tiêu và kiểm thử kết quả thực thi.
+* **Bước 11:** Cấu hình Amazon EventBridge Scheduler để kích hoạt Lambda theo lịch định kỳ.
+* **Bước 12:** Sử dụng Amazon CloudWatch Logs để kiểm tra nhật ký, xác minh kết quả xử lý và hỗ trợ khắc phục lỗi.
+* **Bước 13:** Kiểm thử toàn bộ hệ thống, đánh giá kết quả triển khai và dọn dẹp các tài nguyên AWS không còn sử dụng.
 
-* **Tùy biến mở rộng:** Không chỉ dừng lại ở việc sao chép tệp đơn thuần, hệ thống tích hợp thêm Amazon DynamoDB để tự động trích xuất, định hình và lưu trữ thông tin chi tiết (tên tệp, dung lượng, thời gian xử lý), phục vụ cho việc thống kê báo cáo.
-* **Định hướng phát triển tương lai:** Tích hợp thêm giao diện web tĩnh (Static Web Front-end) trên S3 kết hợp chính sách CORS để người dùng cuối có thể thao tác trực tiếp qua trình duyệt web một cách trực quan.
+## 6. Đóng góp Cá nhân và Kết quả đạt được (Personal Contributions & Results)
+
+* **Xây dựng ứng dụng quản lý chi tiêu:** Phát triển các chức năng xác thực người dùng, quản lý giao dịch và hiển thị dashboard tổng hợp thu chi.
+* **Triển khai ứng dụng trên AWS:** Đưa ứng dụng lên EC2 chạy Ubuntu, cấu hình mạng và sử dụng PM2 để quản lý tiến trình backend.
+* **Tích hợp cơ sở dữ liệu đám mây:** Kết nối ứng dụng với MongoDB Atlas để lưu trữ và truy xuất dữ liệu người dùng, giao dịch.
+* **Tự động hóa thống kê:** Xây dựng hàm Lambda để xử lý dữ liệu chi tiêu và kết hợp EventBridge Scheduler để kích hoạt theo lịch.
+* **Theo dõi quá trình thực thi:** Sử dụng CloudWatch Logs để kiểm tra hoạt động của Lambda, ghi nhận kết quả và hỗ trợ phát hiện lỗi.
+* **Nâng cao kiến thức AWS:** Thực hành các khái niệm về EC2, VPC, subnet, Internet Gateway, route table, Security Group, IAM, Lambda, EventBridge và CloudWatch thông qua một dự án ứng dụng thực tế.
