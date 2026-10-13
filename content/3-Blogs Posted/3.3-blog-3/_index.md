@@ -21,6 +21,6 @@ pre: " <b> 3.3 </b> "
 
 * **Building enterprise-standard architectures:** The framework helps engineering teams make design decisions based on AWS best practices rather than relying only on personal experience.<br>
 
-* **Blog post:** ([Personal Blog](https://lnkd.in/p/dcQ8E83M))
+* **Blog post:** ([Personal Blog](https://lnkd.in/p/gZwSCGJw))
 
 * **Reference:** [AWS Architecture Blog - AWS Well-Architected Framework](https://aws.amazon.com/blogs/architecture/tag/aws-well-architected-framework/)
