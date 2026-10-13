@@ -9,7 +9,7 @@ pre: " <b> 2. </b> "
 ## 1. General Information
 
 * **Project Title:** Building and Deploying a Personal Expense Tracker Application on AWS.
-* **Author:** Nguyễn Hồng Quân
+* **Author:** Nguyễn Xuân Trường
 * **Context:** In modern life, tracking and managing personal income and expenses play an important role in financial planning. However, manual record-keeping makes it difficult for users to summarize financial data and evaluate spending habits. This project develops an Expense Tracker application using Node.js, Express.js, and MongoDB Atlas. The backend is deployed on Amazon EC2, while AWS Lambda, Amazon EventBridge, and Amazon CloudWatch are used to automate statistical tasks and monitor system operations.
 
 ## 2. Problem Statement and Objectives
@@ -43,7 +43,8 @@ pre: " <b> 2. </b> "
 
 ### Architecture Diagram
 
-![Expense Tracker Application Architecture on AWS](/Workshop/images/expense-tracker-architecture.png)
+![Figure 1 – Expense Tracker System Architecture](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
+*Figure 1 – Expense Tracker System Architecture*
 
 ### 3.1. AWS Services and Technologies
 
