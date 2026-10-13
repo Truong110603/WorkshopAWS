@@ -32,6 +32,7 @@ Kiểm tra log:
 pm2 logs expense-tracker
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.12/ubuntu_check_log.png)
+
 ---
 
 ## 2. Health API
@@ -48,6 +49,7 @@ Response:
 }
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.9/pm2status-api-health.png)
+
 ---
 
 ## 3. Kiểm tra Register
@@ -68,6 +70,7 @@ MongoDB Atlas
 → users
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_signup_test.png)
+
 ---
 
 ## 4. Kiểm tra Login
@@ -84,6 +87,7 @@ JWT
 Dashboard
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.12/login-test.png)
+
 ---
 
 ## 5. Thêm giao dịch
@@ -117,6 +121,7 @@ category
 date
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.12/database_add_test.png)
+
 ---
 
 ## 6. Kiểm tra Dashboard
@@ -278,6 +283,7 @@ Users found: 2
 Statistics saved for user: ...
 ```
 ![alt text](/WorkshopAWS/images/4-Workshop/4.11/CloudwatchLogStream.png)
+
 ---
 
 ## 14. Kiểm tra toàn bộ hệ thống
