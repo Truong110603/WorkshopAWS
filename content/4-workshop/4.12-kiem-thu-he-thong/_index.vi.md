@@ -288,7 +288,7 @@ Statistics saved for user: ...
 
 ## 14. Kiểm tra toàn bộ hệ thống
 
-![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/Workshop/images/architecture-diagram.png)
+![Hình 1 – Kiến trúc hệ thống quản lý chi tiêu](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
 *Hình 1 – Kiến trúc hệ thống quản lý chi tiêu
 
 ---
