@@ -350,7 +350,7 @@ These logs confirm the Lambda execution and the statistics processing process.
 
 The complete system can be represented as:
 
-![Figure 1 – Expense Tracker System Architecture](/Workshop/images/architecture-diagram.png)
+![Figure 1 – Expense Tracker System Architecture](/WorkshopAWS/images/4-Workshop/4.2/Exspense_Tracker_Architecture_Diagram.drawio.png)
 *Figure 1 – Expense Tracker System Architecture*
 
 ---
