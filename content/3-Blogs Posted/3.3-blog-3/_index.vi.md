@@ -17,5 +17,5 @@ pre: " <b> 3.3 </b> "
 * **Tối ưu hiệu năng và chi phí:** Kết hợp CloudWatch, Compute Optimizer và Cost Explorer để theo dõi hiệu suất và tối ưu tài nguyên.<br>
 * **Xây dựng kiến trúc theo chuẩn doanh nghiệp:** Framework giúp đội ngũ đưa ra quyết định thiết kế dựa trên best practices thay vì chỉ dựa vào kinh nghiệm cá nhân.<br>
 
-* **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/dcQ8E83M))
+* **Link bài viết:** ([Blog cá nhân](https://lnkd.in/p/gZwSCGJw))
 * **Link tham khảo:** [AWS Architecture Blog - AWS Well-Architected Framework](https://aws.amazon.com/blogs/architecture/tag/aws-well-architected-framework/)
